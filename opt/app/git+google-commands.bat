@@ -27,7 +27,7 @@ cloud_sql_proxy_x64.exe -dir=./cloudsql -instances=mingle-stack:us-east1:mist01=
 git commit -am "Updating configuration"
 git config credential.helper gcloud.cmd
 git remote add cloud https://source.developers.google.com/p/mingle-stack/
-git remote add google https://source.developers.google.com/p/mingle-stack/r/mist01
+git remote add google https://source.developers.google.com/p/mingle-stack/r/mistrepo
 git push cloud
 git push --all google
 git pull google master

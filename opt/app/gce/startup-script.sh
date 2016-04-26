@@ -22,20 +22,20 @@ ln -s /opt/nodejs/bin/npm /usr/bin/npm
 # git requires $HOME and it's not set during the startup script.
 export HOME=/root
 git config --global credential.helper gcloud.sh
-git clone https://source.developers.google.com/p/mingle-stack/r/mist01/
+git clone https://source.developers.google.com/p/mingle-stack/r/mistrepo
 
 # Install app dependencies
-cd /opt/app
+cd /mistrepo/opt/app/servers
 npm install
 
 # Create a nodeapp user. The application will run as this user.
 useradd -m -d /home/nodeapp nodeapp
-chown -R nodeapp:nodeapp /opt/app
+chown -R nodeapp:nodeapp /opt/app/servers
 
 # Configure supervisor to run the node app.
 cat >/etc/supervisor/conf.d/node-app.conf << EOF
 [program:nodeapp]
-directory=/opt/app
+directory=/mistrepo/opt/app/servers
 command=npm start
 autostart=true
 autorestart=true
