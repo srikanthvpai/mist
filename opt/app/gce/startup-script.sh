@@ -26,7 +26,7 @@ git clone https://source.developers.google.com/p/mingle-stack/r/mistrepo
 
 # Install app dependencies
 cd /mistrepo/opt/app/servers
-npm install
+sudo npm install
 
 # Create a nodeapp user. The application will run as this user.
 useradd -m -d /home/nodeapp nodeapp
@@ -36,7 +36,7 @@ chown -R nodeapp:nodeapp /opt/app/servers
 cat >/etc/supervisor/conf.d/node-app.conf << EOF
 [program:nodeapp]
 directory=/mistrepo/opt/app/servers
-command=npm start
+command=sudo npm start
 autostart=true
 autorestart=true
 user=nodeapp
