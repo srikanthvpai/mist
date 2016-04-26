@@ -1,0 +1,63 @@
+<div data-ng-controller="QuestController" class="container-fluid">
+	<div class="row">
+		<div class="qSubjectList col-lg-2">
+			<div class="list-group">
+				<a class="list-group-item" ng-repeat="questTech in questSubjects">
+					{{questTech.technology}} <span class="badge">{{questTech.questCount}}</span>
+				</a>	
+			</div>
+		</div>
+		<div class="midSection col-lg-7">
+			<ul class="nav nav-tabs nav-justified midQuestTabList" role="tablist">
+				<li role="presentation" class="active"><a id="qMainLiALeft" role="tab"  class="btn" data-toggle="tab" data-ng-click="switchMidView('listQuest')">List</a></li>
+				<li role="presentation"><a role="tab"  class="btn" data-toggle="tab" data-ng-click="switchMidView('displayQuest')">Question</a></li>
+				<li role="presentation"><a id="qMainLiARight" role="tab"  class="btn" data-toggle="tab" data-ng-click="switchMidView('askQuest')">Ask Something</a></li>
+			</ul>
+			<div class="tab-content mistPostStackMid">
+				<div role="tabpanel" class="tab-pane active" id="listQuest">
+					<div class="midMain">		
+						<div data-ng-include="midTemplate.url"></div>
+					</div>
+				</div>	
+<!-- 					<div role="tabpanel" class="tab-pane" id="expQuestion"></div>		
+<div role="tabpanel" class="tab-pane" id="askQuestion"></div>	 -->
+</div>	
+</div>
+<div class="col-lg-3 extrasQuest">
+<div class="panel-group">
+	<div class="panel  panel-default">
+		<div class="panel-heading">
+			<div class="panel-title">Most Popular Questions</div>
+		</div>
+
+		<div class="panel-body">
+			<div class="list-group">
+				<div class="list-group-item" data-ng-repeat="popQuest in popQuestions">
+					<div class="panel panel-default">
+						<div class="panel-heading popQHeading">
+							{{popQuest.title}}
+						</div>
+						<div class="panel-body popTDesc">
+							{{popQuest.questionDesc}}
+						</div>	
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<div class="panel-title">Fresh Questions</div>
+		</div>
+		<div class="panel-body">
+			<div class="list-group">
+				<div class="list-group-item"></div>
+				<div class="list-group-item"></div>
+				<div class="list-group-item"></div>
+			</div>
+		</div>
+	</div>	
+</div>
+</div>
+</div>
+</div>

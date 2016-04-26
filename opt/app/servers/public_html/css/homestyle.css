@@ -1,0 +1,123 @@
+div, section {
+	border-width: 1px;
+	padding: 0px;
+	margin: 0px;
+}
+body,html,h1,img {
+	padding: 0px;
+	margin: 0px;
+}
+
+.mainSection {
+	border-color: red;
+	border-style: solid;
+	/*height: 598px;*/
+	/*width: 248px;*/
+}
+
+.section2{
+  /*overflow: auto;*/
+  padding-top:15px;
+  height:100%;
+}
+
+.topicContainer {
+	border-color:blue;
+	border-style:solid;
+	width: 100%;
+
+}
+
+.topicRow{
+	height:600px;
+}
+
+.otherTopicsAuthor{
+	border-color:black;
+	border-style:solid;
+
+}
+.topicAuthor{
+	min-height: 50px;
+	width: 100%;
+	border-color:blue;
+	border-style:solid;
+}
+
+.topicHeading{
+	border-color:black;
+	border-style:solid;
+}
+
+.topicContent{
+	border-color:black;
+	border-style:solid;
+}
+
+.nextIcon{
+	background: white;
+	background-image: url("../images/left-arrow-icon.png");
+	background-size: 100% 100%;
+	height: 50px;
+	width: 50px;
+	border-color:black;
+	border-style:solid;
+}
+
+.rightNext {
+	-webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.homeHeader {
+	width:100%;
+	min-height:50px;
+	background-color: black;
+	color: white;
+	padding: 3px;
+}
+
+.stackHeader {
+	width:100%;
+	min-height:50px;
+	background-color: gray;
+	color: white;
+	padding: 0px;
+}
+
+.stackList {
+	list-style: none;
+	padding-top: 0px;
+    margin: 0;
+}
+
+.stackList li {
+  display: inline;
+  padding-right: 80px;
+  padding-left: 10px;
+  font-size: 1.5em;
+  float: left;
+}
+
+.stackListRightIcon {
+	background-image: url("../images/left-arrow-icon.png");
+	float: right;
+	min-width: 50px;
+	min-height: 50px;
+	-webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+.stackListLeftIcon {
+	background-image: url("../images/left-arrow-icon.png");
+	float: left;
+	min-width: 50px;
+	min-height: 50px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery/jscrollpane.css" rel="stylesheet" media="all" />
+	<link rel="stylesheet" href="css/jquery/jquery-ui.min.css">
+
+	<link rel="stylesheet" type='text/css' href="css/styles.css">
+	<link rel="stylesheet" type='text/css' href="css/loginStack.css">
+	<link rel="stylesheet" type='text/css' href="css/questStack.css">
+	<link rel="stylesheet" type='text/css' href="css/postStack.css">
+	<link rel='stylesheet' type='text/css' href='css/chatBox.css'>
+	<link rel="stylesheet" type='text/css' href="css/chatBar.css">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/default/jquery.mousewheel.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	<script src="scripts/default/jquery.jscrollpane.min.js"></script>
+	<script src="scripts/lib/angular/angular.min.js"></script>
+	<script src="scripts/lib/jquery/jquery-ui.min.js"></script>
+	<script src="scripts/lib/angular/angular-animate.js"></script>
+	<script src="scripts/lib/angular/angular-route.js"></script>
+	<script src="scripts/lib/angular/angular-cookies.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+
+	<script type='text/javascript' src='scripts/globalDeclarations.js'></script>	
+	<script type='text/javascript' src='scripts/globalHelpers.js'></script>					
+	<script type='text/javascript' src="scripts/mistApp.js"></script>
+	<script type='text/javascript' src="scripts/services/authentication.js"></script>
+	<script type='text/javascript' src="scripts/controller/login.js"></script>
+	<script type='text/javascript' src="scripts/controller/chat.js"></script>
+	<script type='text/javascript' src='scripts/questackPage.js'></script>
+	<script type='text/javascript' src='scripts/postackPage.js'></script>
+	<script type='text/javascript' src="scripts/chatDisplay.js"></script>
+	<script type='text/javascript' src='scripts/chatBoxInit.js'></script>
+	<script type='text/javascript' src='scripts/chatBoxHandler.js'></script>
+	<script type='text/javascript' src='scripts/chatBoxDef.js'></script>
+	<script type='text/javascript' src='scripts/geometricSpec.js'></script>
+	<script src="js/prefixfree.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MingleStack</title>
+</head>
+<body class="mistPageBody" data-ng-app="mistApp">
+	
+<div id="header" data-ng-controller="UserDataController" data-ng-include="header.url"></div>	
+<div ng-view></div>	
+<div id="chatBoxes" class="chatBoxes" style="background-color:blue;height:0px;"></div>
+<div id="chatBar" data-ng-controller="ChatController" data-ng-include="chatBar.url"></div>
+<div id="footer" data-ng-controller="FooterController" data-ng-include="footer.url"></div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

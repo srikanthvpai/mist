@@ -1,0 +1,115 @@
+<div data-ng-controller="PostController" class="container-fluid">
+		<div class="row">
+			<div class="tSubjectList col-lg-2">
+				<div class="list-group">
+					<a class="list-group-item">
+						Java
+					</a> 
+					<a class="list-group-item">
+						JavaScript
+					</a> 
+					<a class="list-group-item">
+						Node
+					</a> 
+				</div>	
+			</div>	
+			<div class="midSection col-lg-7">
+				<ul class="nav nav-tabs nav-justified midTopicList" role="tablist">
+					<li role="presentation" class="active"><a id="tMainLiALeft" role="tab" data-toggle="tab" data-ng-click="switchMidView('listTopic')">List</a></li>
+					<li role="presentation"><a role="tab" data-toggle="tab" data-ng-click="displayTopic">Topic</a></li>
+					<li role="presentation"><a id="tMainLiARight" role="tab" data-toggle="tab" data-ng-click="switchMidView('postTopic')">Post Something</a></li>
+				</ul>
+				<div class="tab-content mistPostStackMid">
+					<div role="tabpanel" class="tab-pane active" id="listQuest">
+						<div class="midMain">		
+							<div data-ng-include="midTemplate.url"></div>
+						</div>
+					</div>	
+						<div role="tabpanel" class="tab-pane" id="expQuestion">
+
+						</div>		
+						<div role="tabpanel" class="tab-pane" id="askQuestion">
+						</div>	
+					</div>	
+				</div>
+		<div class="col-lg-3 extrasTopic">
+<div class="panel-group">
+	<div class="panel  panel-default">
+		<div class="panel-heading">
+			<div class="panel-title">Most Popular Questions</div>
+		</div>
+
+		<div class="panel-body">
+			<div class="list-group">
+				<div class="list-group-item" data-ng-repeat="popQuest in popQuestions">
+					<div class="panel panel-default">
+						<div class="panel-heading popTHeading">
+							{{popQuest.title}}
+						</div>
+						<div class="panel-body popTDesc">
+							{{popQuest.questionDesc}}
+						</div>	
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<div class="panel-title">Fresh Questions</div>
+		</div>
+		<div class="panel-body">
+			<div class="list-group">
+				<div class="list-group-item"></div>
+				<div class="list-group-item"></div>
+				<div class="list-group-item"></div>
+			</div>
+		</div>
+	</div>	
+</div>
+</div>
+			</div>
+		</div>
+
+
+
+		<div class="main">
+			<div class="page" id="posts">
+				<div class="container-fluid">
+					<h2>POST-STACK</h2>
+					<div class="row">
+						<blockquote class="col-md-6 col-lg-3" id="richard">
+							<div class="quote">
+								<span class="intro">AngularJS — Superheroic JavaScript MVW Framework</span>
+								<span class="more"> HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop. Other frameworks deal with HTML’s shortcomings by either abstracting away HTML, CSS, and/or JavaScript or by providing an imperative way for manipulating the DOM. Neither of these address the root problem that HTML was not designed for dynamic views.</span>
+								<span class="author">Richard Mackintosh</span>
+							</div>
+						</blockquote>
+
+						<blockquote class="col-md-6 col-lg-3" id="srikanth">
+							<div class="quote">
+								<span class="intro">Bootstrap is the most popular framework for developing responsive, mobile first projects on the web.</span>
+								<span class="more">Designed for everyone, everywhere.Bootstrap makes front-end web development faster and easier. It's made for folks of all skill levels, devices of all shapes, and projects of all sizes.Bootstrap is a free and open-source collection of tools for creating websites and web applications.Bootstrap is a front end framework, that is, an interface for the user, unlike the server-side code which resides on the "back end" or server.Bootstrap is the most-starred project on GitHub, with over 90K stars and more than 38K forks</span>
+								<span class="author">Srikanth Pai</span>
+							</div>
+						</blockquote>
+
+						<blockquote class="col-md-6 col-lg-3" id="olivia">
+							<div class="quote">
+								<span class="intro">Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. </span>
+								<span class="more">Node.js is an open-source, cross-platform runtime environment for developing server-side Web applications. Node.js is not a JavaScript framework, but its applications are written in JavaScript and can be run within the Node.js runtime on a wide variety of platforms, including FreeBSD, IBM AIX, IBM i, IBM System z, Linux, Microsoft Windows, NonStop and OS X. Its work is hosted and supported by the Node.js Foundation, a collaborative project at the Linux Foundation.</span>
+								<span class="author">Olivia Watson</span>
+							</div>
+						</blockquote>
+
+						<blockquote class="col-md-6 col-lg-3" id="ranjan">
+							<div class="quote">
+								<span class="intro">Creative Cloud gives you the world’s best creative apps — and they’re always up to date </span>
+								<span class="more">Adobe Creative Cloud is a software as a service offering from Adobe Systems that gives users access to a collection of software developed by Adobe for graphic design, video editing, web development, photography, and cloud services. In Creative Cloud, a monthly or annual subscription service is delivered over the Internet. Software from Creative Cloud is downloaded from the Internet, installed directly on a local computer and used as long as the subscription remains valid. Online updates and multiple languages are included in the CC subscription. Creative Cloud is hosted on Amazon Web Services.</span>
+								<span class="author">Ranjan Sarkar</span>
+							</div>
+						</blockquote>          
+					</div>
+				</div><!-- container -->
+			</div><!-- posts page -->
+		</div>

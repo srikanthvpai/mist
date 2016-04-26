@@ -1,0 +1,75 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="bannerPlay col-lg-4">
+			
+		</div>
+
+		<div class="bannerPlay2 col-lg-4">
+			
+		</div>
+
+		<div class="signUpForm col-lg-4" data-ng-controller="SignUpController">
+
+			<div class="panel panel-primary">
+
+				<div class="panel-heading">
+					<div class="panel-title h2">
+						New User ? Sign Up Here !!!
+					</div>
+				</div>		
+				<div class="panel-body">
+					<span class="signUpSubmitResult text-center" ng-class="{signUpSubmitSuccess : submitResult, signUpSubmitError: !submitResult}"><p data-ng-show="signUpMessage">{{signUpMessage}}</p></span>
+					<form name="signUpForm" data-ng-submit="signUpRegister()">
+						<div class="form-group">
+							<label class="sr-only" for="signUpFirstName">First Name</label>
+							<input class="form-control" name="firstName" type="text" placeholder="Enter First Name" id="signUpFirstName" data-ng-model="signUp.firstName" data-ng-required="true">
+						</div>
+						<p class="errorInForm" data-ng-show="signUpForm.firstName.$invalid && signUpForm.firstName.$touched">Please fill out First Name</p>
+
+						<div class="form-group">
+							<label class="sr-only" for="signUpLastName">Last Name</label>
+							<input class="form-control" name="lastName" type="text" placeholder="Enter Last Name" id="signUpLastName" data-ng-model="signUp.lastName" data-ng-required="true">
+						</div>
+
+						<p class="errorInForm" data-ng-show="signUpForm.lastName.$invalid && signUpForm.lastName.$touched">Please fill out Last Name</p>
+
+						<div class="form-group">
+							<label class="sr-only" for="signUpEmail">Email</label>
+							<input class="form-control" name="email" type="email" placeholder="Enter email address" id="signUpEmail" data-ng-model="signUp.email" data-data-ng-required="true">
+						</div>
+
+						<p class="errorInForm" data-ng-show="signUpForm.email.$invalid && signUpForm.email.$touched">Enter a valid E-Mail Address</p>
+
+						<div class="form-group form-inline">					
+							<label class="signUpDOBLabel" for="signUpDOBYear"><small>Date of Birth</small></label>
+							<div class="signUpDate">
+							<input class="form-control signUpDOBMon" type="number" min="1" max="12" placeholder="MM" id="signUpDOBMonth" data-ng-model="signUp.dobMon">
+							<input class="form-control signUpDOBDay" type="number" min="1" max="31" placeholder="DD" id="signUpDOBDay" data-ng-model="signUp.dobDay">
+							<input class="form-control signUpDOBYear" type="number" min="1950" max="2016" placeholder="YYYY" id="signUpDOBYear" data-ng-model="signUp.dobYear">
+							</div>
+						</div>
+						
+
+						<div class="form-group">
+							<label class="sr-only" for="signUpPWD1">Enter Password</label>
+							<input class="form-control" name="pwd1" type="password" placeholder="Enter Password" id="signUpPWD1" data-ng-model="signUp.pwd1" data-ng-required="true"  data-ng-minlength="6">
+						</div>
+
+						<p class="errorInForm" data-ng-show="signUpForm.pwd1.$invalid && signUpForm.pwd1.$touched">Please fill in the password. Passwords have to be at least 6 characters long.</p>
+
+						<div class="form-group">
+							<label class="sr-only" for="signUpPWD2">Re-enter Password</label>
+							<input class="form-control" type="password" placeholder="Re-enter Password" id="signUpPWD2" data-ng-model="signUp.pwd2">
+						</div>
+
+						<div class="form-group">
+							<button class="btn btn-primary signUpFormBtn" type="submit">Sign Up</button>
+						</div>													
+					</form>	
+				</div>
+			</div>	
+		</div>
+
+
+	</div>
+</div>

@@ -1,0 +1,41 @@
+<header>
+	<nav class="mistHeaderNav navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="col-md-4">	
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#featured"> <h1>Mingle Stack</h1></a>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div><!-- navbar-header -->
+			</div>
+			<div class="col-md-8" data-ng-controller="SignInController">
+				<div class="signInForm pull-right">
+					<form class="form-inline" data-ng-submit="signIn()">
+
+						<div class="form-group">
+							<label class="sr-only" for="signInEmail"></label>
+							<input type="email" placeholder="Email id" class="signInEmail form-control" id="signInEmail" ng-model="signInInfo.email">
+						</div>
+
+						<div class="form-group">
+							<label class="sr-only" for="signInPWD"></label>
+							<input placeholder="Password" type="password" class="signInPWD form-control" id="signInPWD" data-ng-model="signInInfo.pwd">
+						</div>											
+						<div class="form-group">
+							<input class="btn btn-primary form-control" type="submit" value="Sign In">
+						</div>
+
+						<div class="form-group">
+							<input class="btn btn-primary form-control" type="submit" value="Sign In as Guest">
+						</div>
+
+					</form>
+				</div>
+			</div>	
+		</div> 
+	</nav>
+</header>

@@ -1,0 +1,33 @@
+<div data-ng-controller="ChatController" id="chatContainer" class="chatContainer pull-right">
+	<div class="container-fluid">	
+		<div class="row">
+			<div id="chatListContainer" class="chatListContainer pull-right">
+				<div class="chatMenuLayer" id="chatMenuLayer">
+					<div style="padding:5px;">
+						<div><button class="btn btn-default btn-block" data-ng-repeat="userObj in chatList" data-ng-click="initiate_chat(currentUserObj,userObj)">{{userObj.firstName}} {{userObj.lastName}}</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="chatSign pull-right ">
+				<div id="thinkArea" class="thinkArea pull-right">
+					<div class="thinkText">
+					</div>
+				</div>	
+				<div id="chatBtnDiv" class="chatBtnDiv pull-right">
+					<div id="chatIndicator" class="chatIndicator  chatIconCurvy">
+						<div class="chatArrowDiv">
+							<a role="button" id="chatExpand" class="btn chatExpand" aria-expanded="false" aria-controls="chatMenuLayer"><span id="chatArrow" class="glyphicon glyphicon-menu-left"></span></a>
+						</div>
+						<div class="chatBtn">
+							<span class="glyphicon glyphicon-comment chatIcon"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

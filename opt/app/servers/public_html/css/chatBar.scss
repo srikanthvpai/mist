@@ -1,0 +1,128 @@
+$chatIndicatorHeight: 80px;
+$chatIndicatorWidth: 90px;
+$chatIndicatorBorder: 0px;
+$thinkAreaHeight: 80px;
+$thinkAreaWidth: 208px;
+$thinkAreaBorder: 1px;
+$chatLayerWidth: 300px;
+$chatLayerHeight: 400px;
+$bodyPaddingTop: 170px;
+.chatBtn {
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	min-width: 70px;
+	height: 70px;	
+}
+
+.chatIcon {
+	font-size:3em;
+	color:yellow;
+}
+
+.chatExpand {
+	font-size:1em;
+	color:yellow;
+	cursor: pointer;
+	padding:0px;
+}
+
+.chatArrowDiv {
+	background-color: transparent;
+	height:100%;
+	align-items:center;
+	display:flex;
+}
+
+.chatIndicator {
+	height:$chatIndicatorHeight;
+	width: $chatIndicatorWidth;
+	display:flex;
+	align-items: center;
+	background-color: rgba(255,255,255,0.5);
+	border-width: $chatIndicatorBorder;
+	border-top-left-radius: 0px;
+	border-top-right-radius:  0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 5px;
+	border-style:solid;
+	border-color:white; 
+	position: fixed;
+	top: $chatLayerHeight+$bodyPaddingTop;
+	right: 0px;
+	//top: $chatLayerHeight+170px;
+	// position: absolute;
+}
+
+.chatBtnDiv 
+{
+	padding:0px;
+	 // width: $chatIndicatorWidth+ 2*$chatIndicatorBorder;
+	 // height: $chatIndicatorHeight+ 2*$chatIndicatorBorder;
+	 width: $chatIndicatorWidth;
+	 height: $chatIndicatorHeight;
+	 z-index:10;
+}
+
+
+.thinkArea 
+{
+	height: $thinkAreaHeight ;
+	width: $thinkAreaWidth+ 2*$thinkAreaBorder;
+	position: fixed;
+	right: -($thinkAreaWidth+ 2*$thinkAreaBorder);
+	top: $chatLayerHeight+$bodyPaddingTop;
+}
+
+.thinkText
+ {
+	height: $thinkAreaHeight;
+	width: $thinkAreaWidth+ 2*$thinkAreaBorder;
+	border-width: $thinkAreaBorder;
+	border-style: solid;
+	border-color: white;
+	background-color: white;
+}
+
+.chatSign 
+{
+	width: 100%;
+	height: 100%;
+}
+
+.chatListContainer
+{
+	width: $thinkAreaWidth+$chatIndicatorWidth+(2*$thinkAreaBorder);
+	right: -($thinkAreaWidth+$chatIndicatorWidth+(2*$thinkAreaBorder));
+	height:  $chatLayerHeight;
+	top: bodyPaddingTop;
+	right: -($thinkAreaWidth+$chatIndicatorWidth+(2*$thinkAreaBorder));
+	position: fixed; 
+	background-color: transparent;
+}
+
+.chatMenuLayer {
+	height: auto;
+	-webkit-transition: width 0.35s ease;
+	-moz-transition: width 0.35s ease;
+	-o-transition: width 0.35s ease;
+	transition: width 0.35s ease;
+	background-color:white;
+	width: $thinkAreaWidth+$chatIndicatorWidth+(2*$thinkAreaBorder);
+	height: $chatLayerHeight;
+	border-top-left-radius: 5px;
+}
+
+.chatIconCurvy {
+	border-top-left-radius: 5px;
+}
+
+.chatContainer {
+	width: $chatLayerWidth;
+	height: $chatLayerHeight+$thinkAreaHeight;
+	right: -($chatLayerWidth);
+	position:fixed;
+	top: $bodyPaddingTop;
+	background-color: transparent;
+	z-index: 10;
+}

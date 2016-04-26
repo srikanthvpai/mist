@@ -1,0 +1,163 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Open+Sans:400,700,800,300);
+$colorBlue: rgb(75,84,255);
+$colorYellow: rgb(255,224,25);
+$compOpacity: 0.80;
+$colorShadowWhite: rgb(255,255,255);
+$colorWhite: rgb(255,255,255);
+$colorShadowYellow: rgb(255,245,0);
+$colorChatLayerBkg: rgb(192,192,192);
+$colorBlack: rgb(0,0,0);
+$defaultAlpha: 1.00;
+$chatLayerWidth: 250px;
+$scrollPaneWidth: 10px;
+$inputMessageBoxWidth: 200px;
+$defaultFont: "Roboto Slab", sans-serif;
+
+.chatBoxTitle{
+	width:230px;
+	height: 100%;
+	padding-left: 15px;
+	float: left;
+	vertical-align: middle;
+	line-height: 30px;
+	font-weight: bold;
+	color: $colorWhite;
+}
+
+.chatBox {
+ 	width : $chatLayerWidth+$scrollPaneWidth+2;//Added 2 px for border width
+ 	position:absolute; 
+ 	background-color: transparent;
+ 	float: right;
+ 	bottom: 0px;
+ 	border-style: solid;
+	border-width: 1px;
+	font-family: $defaultFont;
+	font-size: 0.85em;
+	z-index: 15;
+}
+
+.chatBoxes {
+	height: 100%;
+	border-style: solid;
+	border-width: 1px;
+}
+.chatLayer {
+	background-color: transparent;
+	height: 100%;
+	border-style: solid;
+	border-width: 1px;
+}
+.chatBox .chatBoxMessage {
+	background-color: rgba($colorWhite,0.77);
+}
+.chatBox .chatBoxMessage .messageInput {
+	width: $inputMessageBoxWidth + 10px ;
+	height: 50px;
+	float: left;
+}
+.chatBoxMessage .messageInput #messageArea {
+	width: 100%;
+	height: 100%;
+	border-style: none;
+}
+.chatBox .chatBoxMessage .messageLink {
+height: 50px;
+	width: 50px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px; 
+	background-color: rgba($colorYellow,$compOpacity);
+	-webkit-box-shadow: inset 0px 0px 10px rgba($colorShadowWhite,$defaultAlpha);
+	box-shadow: inset 0px 0px 10px rgba($colorShadowWhite,$defaultAlpha);
+	float: right;
+}
+.chatBox .closeChatBox {
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+	background-color: rgba($colorYellow,0.88);
+	-webkit-box-shadow: inset 0 0px 5px rgba($colorShadowYellow,$defaultAlpha);
+	box-shadow: inset 0 0px 5px rgba($colorShadowYellow,$defaultAlpha);
+	float: right;
+}
+.chatBox .closeChatBox span {
+	text-decoration: none;
+	color: rgba($colorYellow,1.00);
+	text-shadow: 0px 0px 4px rgba($colorShadowYellow,$defaultAlpha);
+	font-size: medium;
+}
+.chatBoxMessage #chatMessagesPanel {
+	width: 100%;
+	height: 200px;
+	background-color: rgba($colorChatLayerBkg,0.55);
+	overflow-y: auto;
+	position: relative;
+	padding: 0px; 
+	width: $chatLayerWidth+$scrollPaneWidth;
+}
+.chatBoxHeader {
+	width:100%;
+	height:30px;
+	background-color: rgba($colorBlack,.50);
+}
+
+.chatCanvasMsg {
+	height: 160px;
+	width: 100%;
+}
+.msgWrap{
+	position: relative;
+/*	border-style: solid;
+	border-width: 3px;*/
+	height: 100%;
+}
+#textBox{
+	background-color: transparent;
+	color: white;
+	position: absolute;
+	margin: auto;
+	left:0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	font-family: $defaultFont;
+	font-size: 0.85em;
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.sbCanvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:0;
+}
+#textContent {
+	text-align: center;
+	position: relative;
+	top: 50%; 
+	word-wrap: break-word;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	z-index: 10;
+}
+
+.msgSection {
+	display: inline;
+	top: 0;
+	border-style: solid;
+}
+
+.msgBox {
+	/*position: absolute;*/
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
+	width: $chatLayerWidth;
+	height: 100%;
+}
+

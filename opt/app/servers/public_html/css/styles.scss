@@ -1,0 +1,261 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Open+Sans:400,700,800,300);
+$bodyTopPadding: 170px; /*Included for header spacing*/
+div, section {
+	border-width: 1px;
+	padding: 0px;
+	margin: 0px;
+}
+html,h1 {
+	padding: 0px;
+	margin: 0px;
+}
+body {
+	font-family: "Roboto Slab", sans-serif;
+	font-weight: 300;
+	font-size: 2em;
+	position: relative;
+}
+
+.mistPageBody {
+	padding-top:$bodyTopPadding;
+	background-image: linear-gradient(to bottom, #545454, #858585);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 100;
+	margin: 0;
+}
+img {
+	max-width: 200px;
+}
+
+
+/*Header Navigation*/
+header .headerRow {
+	height: 70px;
+}
+
+header {
+	.mistNavLinks {
+		 padding-top: 20px;
+	}
+}
+
+header {
+	.userContainer {
+	 padding-left: 40px;
+	 height: 70px;
+	 display: flex;
+	 align-items: center;
+	 color:white;
+	 font-size:0.75em;
+	 font-weight:400;
+	}
+}
+
+header .personico {
+	background: url(../images/person.ico);
+	width: 70px;
+	height: 70px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+header .navbar {
+	padding: 30px 0;
+}
+
+header .navbar-default {
+	background: transparent;
+	border: none;
+}
+
+header .navbar-header {
+	/* width: auto; */
+}
+
+header .navbar-default .navbar-nav a {
+	color: white;
+	padding: 5px 8px;
+	cursor: pointer;
+}
+
+header .navbar-default .navbar-nav a:hover {
+	color: #EEC856;
+}
+
+header .navbar-default .navbar-nav .active a {
+	font-weight: 700;
+	color: #EEC856;
+	background: transparent;
+	border-bottom: 4px solid #EEC856;
+	text-shadow: none;
+}
+
+header .navbar-default .navbar-nav .active a:hover {
+	color: #E15D5F;
+	background: transparent;
+	text-shadow: none;
+}
+
+header .navbar-brand {
+	background: url(../images/mist-logo.svg);
+	background-size: 50px 50px;
+	background-position: center;
+	background-repeat: no-repeat;
+	/*background-position: 15px 0;*/
+	height: 70px;
+	width: 50px;
+}	
+
+header .navbar-brand h1 {
+	color: white;
+	margin: 0;
+	font-size: 1em;
+	font-weight: bold;
+	padding-left: 50px;
+}
+
+header .navbar-brand span.subhead {
+	display: block;
+	font-family: "Roboto Slab", serif;
+	font-size: .6em;
+	font-weight: 400;
+}
+
+header .navbar-toggle {
+	background-color: #279182;
+}
+
+header .navbar-default .navbar-toggle .icon-bar {
+	background-color: white;
+}
+
+@media only screen
+and (max-width: 768px) {
+header .navbar-collapse.in {
+	background-color: rgba(255,255,255,0.5);
+}
+}
+
+
+.page {
+	padding: 50px 0;
+}
+
+.page h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#mission {
+	background-color: #E4D29D;
+	background-image: linear-gradient(to bottom, #E3E3E3, #858585);
+	border-top: 20px solid rgba(87, 87, 86, .5);
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+/*Footer Navigation*/
+.page-footer {
+
+	background: #4A4A48;
+	color: white;
+	font-size: .8em;
+	padding: 20px 0 40px 0;
+
+	a {
+		color: #E0E6AE;
+		&:hover {
+		color: #EEC856 !important;
+		}
+	}
+
+	.phone {
+		font-size: 1.4em;
+		font-weight: 700;
+		color: #E0E6AE;
+	}
+
+	.navbar-default {
+		background-color: transparent;
+		border: none;
+		margin-right: 40px;
+	}
+	.navbar-nav{
+		li {
+			a {
+	padding-top: 0;
+	padding-bottom: 0;
+	text-decoration: underline;
+	color: #EEC856 !important;
+			}
+		}
+	}
+
+}
+/* footer {
+	background: #4A4A48;
+	color: white;
+	font-size: .8em;
+	padding: 20px 0 40px 0;
+}
+
+footer a {
+	color: #E0E6AE;
+}
+
+footer a:hover {
+	color: #EEC856 !important;
+}
+
+footer .phone {
+	font-size: 1.4em;
+	font-weight: 700;
+	color: #E0E6AE;
+}
+
+footer .navbar-default {
+	background-color: transparent;
+	border: none;
+	margin-right: 40px;
+}
+
+footer .navbar-nav>li a {
+	padding-top: 0;
+	padding-bottom: 0;
+	text-decoration: underline;
+	color: #EEC856 !important;
+}
+ */
+/*Posts Container*/
+
+
+
+
+.btn-file {
+	position: relative;
+    overflow: hidden;
+
+}
+
+.btn-file {
+	input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+	}
+}
+

@@ -1,0 +1,120 @@
+$iconGray: gray;
+$iconBlue: #337ab7;
+
+.questionVote {
+	display:block;
+	height:50px;
+	top:50%;
+}
+
+.questionVoteSpan {
+
+}
+
+.questionMain {
+	background-color: white;
+	padding: 5px;
+}
+.questionVoteInner {
+	float:right;
+	height:100%;
+}
+
+.questionVoteIcon {
+	color: $iconBlue;
+	vertical-align: middle;
+}
+
+.commentArrow {
+	color: $iconGray;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.commentLink {
+	float: left;
+}
+
+.postComment {
+	
+}
+
+.previousComments {
+/* 	height: 1000px;
+	border-style: solid;
+	border-width: 1px; */
+}
+
+.commentsSection {
+	/* min-height: 20px; */
+}
+
+.qSubjectList {
+	height:2000px;
+	background-color: white;
+	padding: 5px;
+}
+
+.askQuestionForm {
+	background-color: white;
+}
+
+.latestQuestList {
+
+}
+
+.popularQuestList {
+
+}
+
+.midQuestList {
+	background-color: white;
+	padding: 5px;
+}
+
+.midQuestTabList {
+	background-color:#f5f5f5;
+}
+
+.midQuestTabList li a {
+	font-size: .85em;
+	color: black;
+}
+
+.midSection {
+	background-color: white;
+}
+
+.midQuestTabList li a#qMainLiALeft {
+	border-left: none;
+	border-top-left-radius: 0px;
+}
+
+.midQuestTabList li a#qMainLiARight {
+	border-right: none;
+	border-top-right-radius: 0px;
+}
+
+.extrasQuest {
+	background-color: white;
+	padding-top: 50px;
+}
+
+.popQHeading {
+	padding: 0px;
+	border-style: solid;	
+	font-size: 0.75em;
+/* 	font-weight: bold; */
+}
+
+.popQDesc {
+	padding: 0px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+//	border-style: solid;
+	font-size: 0.75em;
+}
+
