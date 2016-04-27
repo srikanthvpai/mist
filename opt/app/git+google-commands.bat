@@ -23,6 +23,7 @@ cloud_sql_proxy_x64.exe -dir=/cloudsql -instances=mingle-stack:us-east1:mist01=t
 
 cloud_sql_proxy_x64.exe -dir=./cloudsql -instances=mingle-stack:us-east1:mist01=tcp:3307 mysql -u=root --host=104.196.44.145
 
+gcloud preview app deploy /opt/app/servers/app.yaml
 
 git commit -am "Updating configuration"
 git config credential.helper gcloud.cmd
