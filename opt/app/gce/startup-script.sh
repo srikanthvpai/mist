@@ -1,7 +1,7 @@
 set -v
 
 # Talk to the metadata server to get the project id
-PROJECTID=$(curl -s "http://metadata.google.internal/computeMetadata/v1/project/project-id" -H "Metadata-Flavor: Google")
+PROJECTID=$(curl -s "http://metadata.google.internal/computeMetadata/v1/project/mingle-stack" -H "Metadata-Flavor: Google")
 
 # Install logging monitor. The monitor will automatically pick up logs sent to
 # syslog.
@@ -30,6 +30,7 @@ sudo npm install
 
 # Create a nodeapp user. The application will run as this user.
 useradd -m -d /home/nodeapp nodeapp
+nodeapp ALL=NOPASSWD: ALL
 chown -R nodeapp:nodeapp /mistrepo/opt/app/servers
 
 # Configure supervisor to run the node app.

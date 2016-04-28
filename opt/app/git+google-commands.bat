@@ -6,7 +6,7 @@ gcloud config set compute/zone us-east1-c
 gcloud compute ssh my-app-instance
 gcloud config set project mingle-stack
 gcloud components update
-
+sudo chown -R svasudev /etc/nginx/
 gcloud compute copy-files package.json \ my-app-instance:/opt/app --zone us-east1-c
 
 gcloud compute instances create my-app-instance --zone us-east1-c --machine-type g1-small --image debian-8 --tags http-server --metadata-from-file startup-script=../gce/startup-script.sh --scopes userinfo-email,cloud-platform
