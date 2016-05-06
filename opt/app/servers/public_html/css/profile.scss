@@ -1,0 +1,83 @@
+.profileImg {
+	width : 250px;
+	height : 250px;
+	background-size: cover;
+	background-image: url('../images/profile-pic.jpg');
+	background-repeat: no-repeat;
+}
+
+.imgContainer {
+	min-width: 250px;
+	min-height: 250px;
+}
+
+.imgUploadBtn {
+
+	-moz-transform:translate(-25px,25px) rotate(-90deg);
+	-ms-transform:translate(-25px,25px) rotate(-90deg);
+	-o-transform:translate(-25px,25px) rotate(-90deg);
+	-webkit-transform: translate(-75px,100px) rotate(-90deg);
+    // transform: translateX(-50%);
+    margin:0px; 
+    min-width:200px;
+}
+
+.imgUploadBtn2 {
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.imgUploadBtn2:hover {
+	background-color: rgba(255,255,255,0.6);
+}
+
+.imgUploadDiv {
+	display: none;
+	text-align: center;
+}
+
+.imgUploadBtn2:hover .imgUploadDiv {
+	display: block;
+}
+
+.imgUploadIcon {
+	font-size: 2em;
+	color: white;
+}
+
+.imgUploadIconTxt {
+	font-size: 1em;
+	color: white;
+}
+
+.memberImgDiv {
+	width: 90px;
+	height:90px;
+	background-repeat: no-repeat;
+	background-image: url('../images/user-Icon.png');
+	background-size:contain;
+}
+
+.memberDesc {
+	position: absolute;
+	top: 50%;
+	left: 90px;
+	transform: translateY(-50%);
+}
+
+.memberNG {
+	padding-left:10px;
+}
+
+.memberGroup {
+	font-size:.85em;
+}
+
+.memberIcon {
+	height:100px;
+}

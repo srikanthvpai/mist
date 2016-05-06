@@ -1,7 +1,9 @@
 var chatBoxHandler;
+var groupChatHandler;
 var geometricSpecification;
 $(function(){
 	chatBoxHandler = new ChatBoxHandler;
+	groupChatHandler = new GroupChatHandler;
 	geometricSpecification = new GeometricSpecification;
 });
 
@@ -29,4 +31,9 @@ function close_chatBox(id)
 function close_allchatBoxes()
 {
 	chatBoxHandler.close_allchatBoxes();
+}
+
+function sendGroupMessage()
+{
+	groupChatHandler.sendGroupMessage();
 }

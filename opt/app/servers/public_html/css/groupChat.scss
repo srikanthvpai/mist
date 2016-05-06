@@ -1,0 +1,92 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Open+Sans:400,700,800,300);
+$colorBlue: rgb(75,84,255);
+$colorYellow: rgb(255,224,25);
+$compOpacity: 0.80;
+$colorShadowWhite: rgb(255,255,255);
+$colorWhite: rgb(255,255,255);
+$colorShadowYellow: rgb(255,245,0);
+$colorChatLayerBkg: rgb(192,192,192);
+$colorBlack: rgb(0,0,0);
+$defaultAlpha: 1.00;
+$chatLayerWidth: 250px;
+$scrollPaneWidth: 10px;
+$inputMessageBoxWidth: 200px;
+$defaultFont: "Roboto Slab", sans-serif;
+.midAlign {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+
+.chatCanvasMsg {
+	height: 160px;
+	width: 100%;
+}
+.msgWrap{
+	position: relative;
+/*	border-style: solid;
+	border-width: 3px;*/
+	height: 100%;
+}
+#textBox{
+	background-color: transparent;
+	color: white;
+	position: absolute;
+	margin: auto;
+	left:0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	font-family: $defaultFont;
+	font-size: 0.65em;
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.sbCanvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:0;
+}
+#textContent {
+	text-align: center;
+	position: relative;
+	top: 50%; 
+	word-wrap: break-word;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	z-index: 10;
+}
+
+.msgSection {
+	display: inline;
+	top: 0;
+	border-style: solid;
+}
+
+.msgBox {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
+	width: $chatLayerWidth;
+	height: 100%;
+}
+
+.senderPicMsg {
+	position: absolute;
+	height:30px; 
+	width:30px; 
+	background-color: white; 
+	float: right;
+	bottom: 0px;
+	background-size: cover;
+	background-image: url('../images/user-Icon.png');
+	border-radius: 2px;
+}
+
+.testBorder {
+	border-style:solid;
+}

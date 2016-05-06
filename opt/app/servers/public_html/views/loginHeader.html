@@ -1,21 +1,19 @@
 <header>
 	<nav class="mistHeaderNav navbar navbar-default navbar-fixed-top">
 		<div class="container">
-			<div class="col-md-4">	
-				<div class="navbar-header">
+			<div class="row">
+			
+			<div class="col-sm-12 col-md-4">	
+				<div class="navbar-header mistHeader">
 					<a class="navbar-brand" href="#featured"> <h1>Mingle Stack</h1></a>
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
-						<span class="sr-only">Toggle Navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
 				</div><!-- navbar-header -->
 			</div>
-			<div class="col-md-8" data-ng-controller="SignInController">
-				<div class="signInForm pull-right">
+			<div class="col-sm-12 col-md-8 col-lg-6 col-lg-offset-2" data-ng-controller="SignInController">
+				<div class="signInForm">
 					<form class="form-inline" data-ng-submit="signIn()">
-
+						<div class="container-fluid">
+						<div class="row">
+						<div class="col-xs-12 col-md-7 col-lg-7 loginInput">
 						<div class="form-group">
 							<label class="sr-only" for="signInEmail"></label>
 							<input type="email" placeholder="Email id" class="signInEmail form-control" id="signInEmail" ng-model="signInInfo.email">
@@ -24,18 +22,26 @@
 						<div class="form-group">
 							<label class="sr-only" for="signInPWD"></label>
 							<input placeholder="Password" type="password" class="signInPWD form-control" id="signInPWD" data-ng-model="signInInfo.pwd">
-						</div>											
+						</div>
+						</div>
+						<div class="col-xs-12 col-md-5 col-lg-5 loginBtns">											
 						<div class="form-group">
-							<input class="btn btn-primary form-control" type="submit" value="Sign In">
+							<input class="btn btn-primary form-control signInBtn" type="submit" value="Sign In">
 						</div>
 
 						<div class="form-group">
-							<input class="btn btn-primary form-control" type="submit" value="Sign In as Guest">
+							<input class="btn btn-info form-control signInGuestBtn" type="submit" value="Sign In as Guest">
+						</div>
+						</div>	
+						</div>			
+
 						</div>
 
 					</form>
 				</div>
 			</div>	
+
+			</div>
 		</div> 
 	</nav>
 </header>

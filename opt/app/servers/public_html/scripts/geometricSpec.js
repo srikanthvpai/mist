@@ -1,8 +1,8 @@
-var textBoxHeights = [25,40,55,60,75,75,90,105,105,120,90];
-var textBoxWidths = [50,80,90,90,100,110,115,115,120,120,180];
+var textBoxHeights = [25,40,55,50,75,75,90,105,105,120,90];
+var textBoxWidths = [50,80,90,100,100,110,115,115,120,120,180];
 var msgDivHeights = [60,80,90,100,110,125,135,150,160,170,180];
 var msgDivWidths = [125,150,175,190,195,200,210,210,220,230,240];
-var scaleXs = [2,2,1.85,1.80,1.75,1.6,1.55,1.5,1.4,1.4,1.65];
+var scaleXs = [2,2,1.85,1.85,1.75,1.6,1.55,1.5,1.4,1.4,1.65];
 var radiuses = [20,30,40,45,50,55,60,65,70,75,72];
 var startPointXs = [0,10,10,10,20,20,20,20,20,20,20];
 var startPointYs = [10,10,10,10,20,20,20,30,30,30,30];
@@ -35,7 +35,7 @@ var GeometricSpecification = function () {
 		{
 		var textLength = text.length-1;
 		var lengthIndex = parseInt(textLength/10,10);
-		console.log("LENGTH INDEX: "+lengthIndex);
+		console.log(textLength+" LENGTH INDEX: "+lengthIndex);
 		var dimensions = {radius:0,scaleX:0,
 						textBoxHeight:0,textBoxWidth:0,
 						msgDivHeight:0,msgDivWidth:0,

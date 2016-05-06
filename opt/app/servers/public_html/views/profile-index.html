@@ -1,16 +1,91 @@
-<div class="container">
-		<div class="row">
-			<div class="col-lg-6">
-				<img src="images/srikanth.jpg" style="max-width:100%;max-height:100%;border-radius: 5px;">
-			</div>
-			<div class="col-lg-6" style="color:white;">
-				<p><h2>About Me</h2></p>
-				<br>
-				<p>
-					I am a full-stack design/developer and a full-time at IBM. My areas of expertise are front-end design and development topics such as JavaScript, AngularJS, and Sass, plus frameworks like Bootstrap and tools that makes me a developer. My hobbies include web development, playing soccer, swimming, gymming to name a few.
+<div data-ng-controller="ProfileController">
+			<div class="container">
+				<div class="row">
+					<div class="profileContainer col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								{{user.firstName+user.lastName}}
+							</div>
+							<div class="panel-body">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="imgContainer col-lg-3">
+											<div class="container-fluid">
+											<div class="row">
+											<div class="profileImg col-lg-12"></div>
+											<!-- <div class="col-lg-2" style="height:250px; display:flex;align-items:center;padding:5px;">
 
-					Previously, as a director of multimedia for Cybersplash, I managed a network of radio and TV station websites on the East Coast. I designed large newspaper sites and created interactive projects/games for the Tribune network of newspapers. I can be reached through any social network or check out my blog : <a href="http://www.minglestack.com" style="color:#EEC856;">Mingle Stack</a>
-				</p>
+												<span class="glyphicon glyphicon-upload" style="font-size:2em;"></span>
+												
+											</div> -->
+											<div class="imgUploadBtn2">
+												<div class="imgUploadDiv">
+												<span class="glyphicon glyphicon-upload imgUploadIcon"></span>
+												<p class="imgUploadIconTxt">Upload Pic</p>
+												</div>
+											</div>
+											<!-- <div class="col-lg-2" style="padding:0px;padding:0px;">
+												<button class="imgUploadBtn btn btn-primary">Upload Pic</button>										
+											</div> -->
+											</div>
+											</div>
+										</div>
+										<div class="profileContainer col-lg-7">
+											<ul class="list-group">
+												<li class="list-group-item">First Name : {{user.firstName}}
+													<button class="btn btn-default disabled pull-right">Edit</button>
+												</li>
+												<li class="list-group-item">Last Name : {{user.lastName}}
+													<button class="btn btn-default disabled pull-right">Edit</button>
+												</li>
+												<li class="list-group-item">Date of Birth : {{user.dob}}
+													<button class="btn btn-default disabled pull-right">Edit</button>
+												</li>
+												<li class="list-group-item">Email id : {{user.email}}
+													<button class="btn btn-default disabled pull-right">Edit</button>
+												</li>
+												<li class="list-group-item">Group : {{user.group}}
+													<button class="btn btn-default disabled pull-right">Edit</button>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div class="memberContainer col-lg-12">
+						<div class="panel">
+							<div class="panel-heading">
+								Friends
+							</div>
+							<div class="panel-body">
+								<ul class="list-group">
+								<div class="container-fluid">
+								<li class="list-group-item col-lg-4 col-md-4" data-ng-repeat="member in memberList"> 
+									<div class="memberIcon">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="memberImgDiv col-sm-3">
+													
+												</div>
+												<div class="memberDesc col-sm-9">
+													<div class="memberNG">
+														<span class="memberName">{{member.firstName+ member.lastName}}</span>
+														<br>
+													<span class="memberGroup">	
+													 {{member.groupName}}</span>
+													 </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								</div>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>	

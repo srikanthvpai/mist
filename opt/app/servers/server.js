@@ -52,9 +52,31 @@ app.get('/chatList', function(req,res){
 	});
 });
 
+app.get('/myFriends', function(req,res){
+	console.log("Server: Trying to fill friends list");
+	var p = new Promise(function(resolve,reject){
+		reqHandler.validateRequest(req,res,resolve,reject);
+	});
+	p.then(function(resolve,reject){
+		console.log("Sending to userHandler !!!!");
+		userHandler.fillFriends(req,res,resolve,reject);
+	}).catch(function(err){
+		console.log("ERROR ERROR filling friends list"+err);
+	});
+
+
+});
+
 
 app.post('/public_html', function(req,res){
 	res.sendFile("/public_html/"+req.body.value,{root:__dirname});
+});
+
+app.post('/createGroupRoom',function(req,res){
+	var roomData  = JSON.parse(req.query.room);
+	check(roomData);
+	chatHandler.createGroupRoom(roomData.roomName,roomData.roomDesc);
+	res.end();
 });
 
 app.post('/signUpUser',function(req,res){

@@ -13,6 +13,10 @@ ConvService.prototype.saveMessage = function(msgObj,convId,callback,callbackerr)
 	query+=msgObj.msgText;
 	query+='")';
 	this.dbService.executeQueryFetch(query,callback,callbackerr);
-}
+};
+
+ConvService.prototype.executeQueryFetch = function(query,callback,callbackerr){
+	this.dbService.executeQueryFetch(query,callback,callbackerr);	
+};
 
 module.exports = ConvService;

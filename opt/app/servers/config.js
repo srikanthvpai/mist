@@ -52,8 +52,8 @@ nconf
 
     MYSQL_USER: 'mist',
     MYSQL_PASSWORD: 'rahman',
-    MYSQL_HOST: '104.196.44.145',
-    //MYSQL_HOST: 'localhost',
+    //MYSQL_HOST: '104.196.44.145',
+    MYSQL_HOST: 'localhost',
     // Port the HTTP server
     PORT: 8080
   });

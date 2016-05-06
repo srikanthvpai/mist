@@ -35,6 +35,7 @@ mistApp.factory('Authentication',['$rootScope','$location','$window','$cookies',
 					 	if($cookies.get('mistTrack'))
 					 	{
 					 		isAuthenticated = true;
+					 		$window.sessionStorage.setItem("currentUserObj",JSON.stringify(res.data));
 					 		$rootScope.currentUserObj = res.data;
 						 	$rootScope.$broadcast('userAuth',res.data);
 						 	$location.path('/homePage');
@@ -44,12 +45,13 @@ mistApp.factory('Authentication',['$rootScope','$location','$window','$cookies',
 					 		isAuthenticated = false;
 					 		console.log("Mist server denied authorization");
 					 		alert("Login Error : Authentication denied");
-					 		$rootScope.currentUserObj ="";
+					 		$window.sessionStorage.setItem("currentUserObj","");
 					 		$location.path('/login');
 					 	}
 					 }).catch(function(err){
 					 	isAuthenticated = false;
-					 	$rootScope.currentUserObj ="";
+					 	$window.sessionStorage.setItem("currentUserObj","");
+					 	$rootScope.currentUserObj = "";
 					 	$rootScope.$broadcast('userNotAuth',{user:null});
 					 	alert("Login Error : Please contact Sys Admin");
 					 });
@@ -58,7 +60,8 @@ mistApp.factory('Authentication',['$rootScope','$location','$window','$cookies',
 					isAuthenticated = false;
 					console.log("Error during authentication 222: "+err);
 					$cookies.put('mistTrack',null);
-					$rootScope.currentUserObj ="";
+					$window.sessionStorage.setItem("currentUserObj","");
+					$rootScope.currentUserObj = "";
 					$location.path('/error');
 				});
 			},
@@ -66,7 +69,8 @@ mistApp.factory('Authentication',['$rootScope','$location','$window','$cookies',
 				$cookies.remove('mistTrack');
 				isAuthenticated = false;
 				$rootScope.$broadcast('userNotAuth',{user:null});
-				$rootScope.currentUserObj ="";
+				$window.sessionStorage.setItem("currentUserObj","");
+				$rootScope.currentUserObj = "";
 				close_allchatBoxes();
 				$location.path('/login');
 				return auth.$unauth();
@@ -103,8 +107,8 @@ mistApp.factory('Authentication',['$rootScope','$location','$window','$cookies',
 
 			},
 			isAuthenticated: function() {
-				//console.log("Logging Authentication data : "+auth.$getAuth());
-				return isAuthenticated;
+				var check = $cookies.get('mistTrack') ? true:false;
+				return check;
 			}
 		}
 }]);

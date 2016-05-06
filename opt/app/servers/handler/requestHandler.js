@@ -6,7 +6,9 @@ var RequestHandler = function() {
 };
 
 RequestHandler.prototype.validateRequest = function(req,res,callback,callbackerr) {
+	console.log("Validating request");
 	var mistTrackCookie = req.cookies.mistTrack;
+	console.log("Validating request"+mistTrackCookie);
 	if(mistTrackCookie)
 	{
 		console.log("DE-AUTHENTIFYING!!!!");

@@ -1,24 +1,14 @@
 
-> mingle-stack@1.0.0 start C:\mi-st\servers
+> mingle-stack@1.0.0 start C:\mingle-stack\opt\app\servers
 > node server.js
 
 *****SRIKANTH SRIKANTH***** listening on 8080
-Request authData: {"provider":"password","uid":"9352af49-760a-419a-bbd8-cc2ad9347bf6","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjowLCJkIjp7InByb3ZpZGVyIjoicGFzc3dvcmQiLCJ1aWQiOiI5MzUyYWY0OS03NjBhLTQxOWEtYmJkOC1jYzJhZDkzNDdiZjYifSwiaWF0IjoxNDYxMjcyOTI1fQ.jB4pVnC0OFTLEzM9RYeV41OCTh4sFqAl3eUjInPXWiE","password":{"email":"john.joe@gmail.com","isTemporaryPassword":false,"profileImageURL":"https://secure.gravatar.com/avatar/728b59b77259c2eaf0e7d2bc030b16c9?d=retro"},"auth":{"provider":"password","uid":"9352af49-760a-419a-bbd8-cc2ad9347bf6"},"expires":1461359325}
-Inside authorization!!!
-Inside USER HANDLER doing !!!!
-Query to DB : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id='9352af49-760a-419a-bbd8-cc2ad9347bf6' LIMIT 1
+roomName: test1
+roomDesc: Test room dummy room
+insert into mist01.mistgroupchatroom(room_name,room_description) values('test1','Test room dummy room')
+Query to DB : insert into mist01.mistgroupchatroom(room_name,room_description) values('test1','Test room dummy room')
 Going to execute Qquery !!!!
-Got result set !!!![object Object]
-USER FOUND !!!
-Server : Trying to fullfill list
-DE-AUTHENTIFYING!!!!
-Sending to chathandler !!!!
-firstName: John
-lastName: Joe
-email: john.joe@gmail.com
-firebaseId: 9352af49-760a-419a-bbd8-cc2ad9347bf6
-select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuserwhere binary firebase_id<>'9352af49-760a-419a-bbd8-cc2ad9347bf6'
-Query to DB : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuserwhere binary firebase_id<>'9352af49-760a-419a-bbd8-cc2ad9347bf6'
+Query to DB : select mistid_groupchatroom from mist01.mistgroupchatroom where room_name='test1'
+111 ERROR ERROR 1111 TRYING TO CREATE A GROUP ROOMTypeError: Cannot read property '0' of undefined
 Going to execute Qquery !!!!
-ERROR IN CHAT HANDLER : Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'binary firebase_id<>'9352af49-760a-419a-bbd8-cc2ad9347bf6'' at line 1
 Terminate batch job (Y/N)? 

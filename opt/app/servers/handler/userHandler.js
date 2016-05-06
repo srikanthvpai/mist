@@ -41,6 +41,44 @@ UserHandler.prototype.fetchUser = function(firebaseUid,callback,callbackerr){
 	});*/
 };
 
+UserHandler.prototype.fillFriends = function(req,res,callback,callbackerr){
+	
+	var currentUserObj = JSON.parse(req.query.userData);
+	check(currentUserObj);
+	var query = "select a.first_name,a.last_name,a.email_id,b.group_name from mist01.mistuser AS a ";
+	query+="inner join mist01.mistgroup AS b ON a.mistid_group=b.mistid_group where a.firebase_id<>'";
+	query += currentUserObj.firebaseId+"'";
+	var that = this;
+	var p = new Promise(function(resolve,reject){
+		that.dbService.executeQueryFetch(query,resolve,reject);
+	});
+	p.then(function(resultSet){
+		var friendData = [];
+		resultSet.forEach(function(userRow){
+			var userObj = {};
+			userObj.firstName = userRow.first_name;
+			userObj.lastName = userRow.last_name;
+			userObj.email = userRow.email_id;
+			userObj.groupName = userRow.group_name;
+			userObj.firebaseId = userRow.firebase_id;
+			friendData.push(userObj);
+		});
+		res.json(friendData);
+		console.sent("SENT USER DATA");
+		callback();
+	}).catch(function(){
+		callbackerr();
+	});
+
+};
+
+function check(obj){
+	for(var property in obj)
+	{
+		console.log(property+": "+obj[""+property]);
+	}
+}
+
 function capitalize_Words(str)  
 {  
  return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});  

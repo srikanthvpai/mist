@@ -43,6 +43,32 @@ ChatHandler.prototype.initializeRoom = function(roomID,userData)
 	this.rooms.unshift(roomID);
 }
 
+ChatHandler.prototype.createGroupRoom = function(roomName,roomDescription)
+{
+	var query1 = "insert into mist01.mistgroupchatroom(room_name,room_description) values('";
+		query1 += roomName+"','"+roomDescription+"')";
+	var query2 = "select mistid_groupchatroom from mist01.mistgroupchatroom where room_name='";
+		query2 += roomName+"'";
+		console.log(query1);
+	var that = this;
+	var p = new Promise(function(resolve,reject){
+		that.dbService.executeQuery(query1,resolve,reject);
+	});
+	p.then(function()
+	{
+		console.log(":::::::"+that.dbService.executeQuery(query2,p.resolve,p.reject));
+	}).then(function(resultSet){
+		if(resultSet[0] && resultSet[0].mistid_groupchatroom)
+		{
+			console.log("Created groupRoom "+resultSet[0].mistid_groupchatroom);
+			return resultSet[0].mistid_groupchatroom;
+		}
+	}).catch(function(err){
+		console.log("111 ERROR ERROR 1111 TRYING TO CREATE A GROUP ROOM"+err);
+	}).catch(function(err){
+		console.log("222 ERROR ERROR 2222 TRYING TO CREATE A GROUP ROOM"+err);
+	});
+}
 
 ChatHandler.prototype.adminConnect = function(messageString,socket)
 {
@@ -51,29 +77,6 @@ ChatHandler.prototype.adminConnect = function(messageString,socket)
 	this.adminSocket = socket;
 	var newConnTransmitObject;
 	var socketConnected;
-	/*conversations["conversations"].forEach(function(convObj){
-		console.log("Admin joining a room"+convObj["roomID"]);
-		adminSocket.join(convObj["roomID"]);
-		var clients = defaultNsp.in(convObj["roomID"]).clients(function(error,clients){return clients;});
-		for(var property in clients)
-		{
-			console.log(property+" : "+clients.property);
-		}
-		var newObj = {sender:convObj["participant1"],recepient:convObj["participant1"]};
-		adminSocket.emit("initClients", JSON.stringify(newObj));
-	});*/
-	//initialize(messageString,socket);
-	/*for(var property in defaultNsp.connected)
-	{
-		var connectedSocket = defaultNsp.connected[property];
-		var newConnTransmitObject = {message:"Hi, This is Srikanth here, How are you doing?" , sender: "administrator",recepient: connectedSocket[""]};
-		var user = connectedSocket["sender"];
-		console.log(property+":"+user);
-		if(user!= 'administrator')
-		{
-			connectedSocket.emit("message",JSON.stringify(newConnTransmitObject));
-		}
-	}*/
 }
 
 
@@ -96,8 +99,7 @@ ChatHandler.prototype.sendMessage = function(msgStringObj,socket)
 		});
 
 		p.then(function(resultSet){
-
-			that.defaultNsp.in(convId).emit("message",msgStringObj);
+				that.defaultNsp.in(convId).emit("message",msgStringObj);
 		}).catch(function(err){
 			console.log("INSIDE CHAT HANDLER"+err);
 		});

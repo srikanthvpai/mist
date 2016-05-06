@@ -8,51 +8,126 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/questStack.css">
 	<link rel="stylesheet" href="css/chatBar.css">
+	<link rel="stylesheet" href="css/groupChat.css">
 	<link rel="stylesheet" href="css/jquery/jquery-ui.min.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/default/jquery.mousewheel.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	<script src="scripts/default/jquery.jscrollpane.min.js"></script>
 	<script src="scripts/lib/angular/angular.min.js"></script>
 	<script src="scripts/lib/jquery/jquery-ui.min.js"></script>
-	<script type='text/javascript' src='scripts/globalDeclarations.js'></script>
-	<script src="scripts/controller/quest.js"></script>
-	<script src="scripts/chatDisplay.js"></script>
+	<script src="scripts/lib/angular/angular-animate.js"></script>
+	<script src="scripts/lib/angular/angular-route.js"></script>
+	<script src="scripts/lib/angular/angular-cookies.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+
+	<script type='text/javascript' src='scripts/globalDeclarations.js'></script>	
+	<script type='text/javascript' src="scripts/mistApp.js"></script>
+	<script type='text/javascript' src="scripts/services/authentication.js"></script>
+	<script type='text/javascript' src="scripts/controller/profile.js"></script>
+	<script type='text/javascript' src="scripts/controller/groupChat.js"></script>
 	<script src="js/prefixfree.min.js"></script>
+
+	<script type='text/javascript' src="scripts/chatDisplay.js"></script>
+	<script type='text/javascript' src='scripts/chatBoxDef.js'></script>
+	<script type='text/javascript' src='scripts/chatBoxHandler.js'></script>
+	<script type='text/javascript' src='scripts/groupChatDef.js'></script>
+	<script type='text/javascript' src='scripts/groupChatHandler.js'></script>
+	<script type='text/javascript' src='scripts/geometricSpec.js'></script>
+	<script type='text/javascript' src='scripts/chatBoxInit.js'></script>
+
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>MingleStack</title>
 </head>
-<body style="padding-top:170px;background-image: linear-gradient(to bottom, #545454, #858585);min-height: 600px;">
+<body style="padding-top:170px;background-image: linear-gradient(to bottom, #545454, #858585);min-height: 600px;" data-ng-app="mistApp">
 	<div id="header"></div>
-	<div style="width:100%;height:700px;background-color: blue;"></div>
-	<div id="chatContainer" class="chatContainer pull-right">
-		<div class="container-fluid">	
+	<div style="height:700px;background-color: white;">
+		
+		<div data-ng-controller="GroupChatController" class="container-fluid">
 			<div class="row">
-				<div id="chatListContainer" class="chatListContainer pull-right">
-					<div class="chatMenuLayer" id="chatMenuLayer">
-						<div></div>
+
+			<div class="col-lg-3" style=";height:600px;background-color: yellow;text-align: center;">
+
+				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
+				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
+				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
+				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
+				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
+				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
+				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
+				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
+
+			</div>
+			<div id="grpChat" class="col-lg-9" style=";height:600px;background-color: green;">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="hidden-xs col-lg-10 midAlign" style=";height:600px;background-color: blue;">
+							<div class="container-fluid">
+								<div class="row">
+									<div id="grpMsgPanel" class="col-sm-12"  style="width: 700px;border-style:solid;height:500px;background-color:rgba(255,255,255,0.7);">
+										<div id='canvasLayer'></div>
+									</div>
+								</div>
+								<div class="row midAlign">
+									<div style="width: 700px;;height:100px;background-color:rgba(255,255,255,0.9)">
+										<div class="col-sm-9">
+										<textarea id="messageArea" style="min-width:500px;height: 100px;font-size:0.85em;"></textarea>
+										</div>
+										<div class="col-sm-3" style="padding:5px;">
+											<button class="btn btn-warning" style="width:100%;display:block;" onclick="sendGroupMessage()">Send</button>
+											<button class="btn btn-warning" style="width:100%;display:block;margin-top: 5px;" data-ng-click="createGroupRoom()">Think</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					 	<div class="col-lg-2" style=";height:400px;background-color: red;">
+							<div class="container-fluid">
+								<div class="row">
+									<ul class="list-group">
+										<div class="container-fluid">
+										<div class="row">	
+										<li class="list-group-item midAlign col-xs-3 col-lg-12" style="padding:0px;">
+											<div style="border-style:solid; width:150px;height:40px;"></div>
+										</li>
+										<li class="list-group-item midAlign col-xs-3 col-lg-12" style="padding:0px;">
+											<div style="border-style:solid; width:150px;height:40px;"></div>
+										</li>
+										<li class="list-group-item midAlign col-xs-3 col-lg-12" style="padding:0px;">
+											<div style="border-style:solid; width:150px;height:40px;"></div>
+										</li>
+										<li class="list-group-item midAlign col-xs-3 col-lg-12" style="padding:0px;">
+											<div style="border-style:solid; width:150px;height:40px;"></div>
+										</li>
+										<li class="list-group-item midAlign col-xs-3 col-lg-12" style="padding:0px;">
+											<div style="border-style:solid; width:150px;height:40px;"></div>
+										</li>
+										<li class="list-group-item midAlign col-sm-3 col-lg-12" style="padding:0px;">
+											<div style="border-style:solid; width:150px;height:40px;"></div>
+										</li>
+										</div>
+										</div>
+									</ul>
+								</div>
+								<div class="row">
+
+								</div>
+							</div>
+						</div> 
 					</div>
 				</div>
 			</div>
+
 		</div>
-		<div class="container-fluid">
-		<div class="row">
-		<div class="chatSign pull-right ">
-			<div id="thinkArea" class="thinkArea pull-right">
-				<div class="thinkText">
-				</div>
-			</div>	
-			<div id="chatBtnDiv" class="chatBtnDiv  pull-right" style="z-index:100;">
-				<div id="chatIndicator" class="chatIndicator">
-					<div class="chatArrowDiv">
-						<a role="button" id="chatExpand" class="btn chatExpand" aria-expanded="false" aria-controls="chatMenuLayer"><span id="chatArrow" class="glyphicon glyphicon-menu-left"></span></a>
-					</div>
-					<div class="chatBtn">
-						<span class="glyphicon glyphicon-comment chatIcon"></span>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-		</div>
+
+		</div>	
+
+
+
 	</div>
 
 	<div id="footer"></div>

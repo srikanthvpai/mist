@@ -29,7 +29,10 @@ function chatIconToggler(){
     {
     	$('#thinkArea').animate({"right": '+='+thinkAreaWidth});
         $('#chatListContainer').animate({"right": '+='+chatListWidth});
-        $('#chatIndicator').animate({"right": '+='+thinkAreaWidth});	
+        $('#chatIndicator').animate({"right": '+='+thinkAreaWidth});
+        var chatScope = angular.element("#chatContainer").scope();
+        console.log("CHAT SCOPE CONTROLLER "+chatScope);
+        chatScope.fillChatBar();
     }
     $('#chatArrow').toggleClass("glyphicon-menu-right");
     $('#chatIndicator').toggleClass("chatIconCurvy");

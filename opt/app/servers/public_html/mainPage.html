@@ -14,7 +14,8 @@
 	<link rel="stylesheet" type='text/css' href="css/postStack.css">
 	<link rel='stylesheet' type='text/css' href='css/chatBox.css'>
 	<link rel="stylesheet" type='text/css' href="css/chatBar.css">
-
+	<link rel="stylesheet" type='text/css' href="css/profile.css">
+	<link rel="stylesheet" type='text/css' href="css/header.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts/default/jquery.mousewheel.js"></script>
@@ -34,10 +35,14 @@
 	<script type='text/javascript' src="scripts/services/authentication.js"></script>
 	<script type='text/javascript' src="scripts/controller/login.js"></script>
 	<script type='text/javascript' src="scripts/controller/chat.js"></script>
+	<script type='text/javascript' src="scripts/controller/profile.js"></script>
 	<script type='text/javascript' src='scripts/questackPage.js'></script>
 	<script type='text/javascript' src='scripts/postackPage.js'></script>
+
 	<script type='text/javascript' src="scripts/chatDisplay.js"></script>
 	<script type='text/javascript' src='scripts/chatBoxInit.js'></script>
+	<script type='text/javascript' src='scripts/groupChatDef.js'></script>
+	<script type='text/javascript' src='scripts/groupChatHandler.js'></script>
 	<script type='text/javascript' src='scripts/chatBoxHandler.js'></script>
 	<script type='text/javascript' src='scripts/chatBoxDef.js'></script>
 	<script type='text/javascript' src='scripts/geometricSpec.js'></script>
@@ -46,12 +51,13 @@
 	<title>MingleStack</title>
 </head>
 <body class="mistPageBody" data-ng-app="mistApp">
-	
-<div id="header" data-ng-controller="UserDataController" data-ng-include="header.url"></div>	
-<div ng-view></div>	
-<div id="chatBoxes" class="chatBoxes" style="background-color:blue;height:0px;"></div>
-<div id="chatBar" data-ng-controller="ChatController" data-ng-include="chatBar.url"></div>
-<div id="footer" data-ng-controller="FooterController" data-ng-include="footer.url"></div>
+
+	<div id="header" data-ng-controller="UserDataController" data-ng-include="header.url"></div>
+	<div ng-view></div>
+	<div id="chatBoxes" class="chatBoxes" style="height:0px;"></div>
+	<div id="chatBar" data-ng-controller="ChatBarController" data-ng-include="chatBar.url"></div>
+	<div id="footer" data-ng-controller="FooterController" data-ng-include="footer.url"></div>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
 </body>

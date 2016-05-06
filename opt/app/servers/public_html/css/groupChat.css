@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Open+Sans:400,700,800,300);
+.midAlign {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.chatCanvasMsg {
+  height: 160px;
+  width: 100%; }
+
+.msgWrap {
+  position: relative;
+  /*	border-style: solid;
+  	border-width: 3px;*/
+  height: 100%; }
+
+#textBox {
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 0.65em;
+  display: table-cell;
+  vertical-align: middle; }
+
+.sbCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; }
+
+#textContent {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  word-wrap: break-word;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  z-index: 10; }
+
+.msgSection {
+  display: inline;
+  top: 0;
+  border-style: solid; }
+
+.msgBox {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+  width: 250px;
+  height: 100%; }
+
+.senderPicMsg {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  float: right;
+  bottom: 0px;
+  background-size: cover;
+  background-image: url("../images/user-Icon.png");
+  border-radius: 2px; }
+
+.testBorder {
+  border-style: solid; }
+
+/*# sourceMappingURL=groupChat.css.map */

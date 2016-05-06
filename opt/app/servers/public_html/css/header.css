@@ -1,0 +1,102 @@
+.newsFeed {
+  background-color: blue;
+  min-height: 100px;
+  border-radius: 3px; }
+
+.mistHeaderIcon2 {
+  /* 	float: left;*/
+  min-width: 150px; }
+
+.toggleDiv {
+  display: none; }
+
+header .userContainer {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 0.75em;
+  font-weight: 400; }
+
+header .personico {
+  background: url(../images/user-Icon.png);
+  width: 70px;
+  height: 70px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  background-color: white; }
+
+header .navbar {
+  padding: 30px 0; }
+
+header .navbar-default {
+  background: transparent;
+  border: none; }
+
+header .navbar-header {
+  /* width: auto; */ }
+
+header .navbar-default .navbar-nav a {
+  color: black;
+  padding: 5px 8px;
+  cursor: pointer; }
+
+header .navbar-default .navbar-nav a:hover {
+  color: #EEC856; }
+
+header .navbar-default .navbar-nav .active a {
+  font-weight: 700;
+  color: #EEC856;
+  background: transparent;
+  border-bottom: 4px solid #EEC856;
+  text-shadow: none; }
+
+header .navbar-default .navbar-nav .active a:hover {
+  color: #E15D5F;
+  background: transparent;
+  text-shadow: none; }
+
+header .navbar-brand {
+  background: url(../images/mist-logo.svg);
+  background-size: 50px 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-position: 15px 0;*/
+  height: 70px;
+  width: 50px; }
+
+header .navbar-brand h1 {
+  color: white;
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+  padding-left: 50px; }
+
+header .navbar-brand span.subhead {
+  display: block;
+  font-family: "Roboto Slab", serif;
+  font-size: .6em;
+  font-weight: 400; }
+
+header .navbar-toggle {
+  background-color: #279182; }
+
+header .navbar-default .navbar-toggle .icon-bar {
+  background-color: white; }
+
+@media only screen and (max-width: 768px) {
+  header .navbar-collapse.in {
+    background-color: rgba(255, 255, 255, 0.5); } }
+.mainNavListBtn {
+  width: 125px;
+  height: 40px;
+  margin: 3px;
+  font-size: 0.85em;
+  padding: 0px;
+  border-radius: 3px; }
+
+.list-group {
+  border-radius: 0px; }
+
+/*# sourceMappingURL=header.css.map */

@@ -24,13 +24,28 @@ DBService.prototype.executeQuery = function(query,callback,callbackerr){
 			console.log("Going to execute Qquery !!!!");
 			connection.queryAsync(query).then(function(resultSet){
 				connection.release();
-				callback(resultSet);
+				for(var property in resultSet)
+				{
+					console.log(property+ " : "+resultSet[""+property]);
+					for(var property in resultSet[0])
+					{
+						console.log(property+" 0 0 0 0 "+resultSet[0][""+property]);
+					}
+				}
+
+				/*if(resultSet[0])
+					console.log(resultSet[0].mistid_groupchatroom);
+				if(callback)*/
+					callback(resultSet);
+				//return resultSet;
 			}).catch(function(err){
 				console.log("DB ERROR : "+err);
+				connection.release();
 				callbackerr(err);
 			});
 		}).catch(function(err){
 			console.log("DB ERROR : "+err);
+			connection.release();
 			callbackerr(err);
 		});
 		

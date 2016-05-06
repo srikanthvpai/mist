@@ -22,7 +22,7 @@ var ChatBox = function(participantA,participantB,chatId) {
 
 	this.transmitMessageToCanvas = function(msgText,sender,recepient)
 	{
-		msgCount = this.messages.push(msgText);
+		this.msgCount = this.messages.push(msgText);
   		this.displayMessage(msgText,sender,recepient);
   		this.scrollPaneApis[this.chatId].scrollToBottom(true);
   		this.scrollPaneApis[this.chatId].reinitialise();
@@ -36,14 +36,14 @@ var ChatBox = function(participantA,participantB,chatId) {
 		var tempUserIndex = (sender.firebaseId===this.currentUser.firebaseId)?this.userIndex:this.userIndex*(-1);
 		console.log("TEMP USER INDEX IS "+tempUserIndex);
 		var dimensions = geometricSpecification.getDimensionsForText(msgText,tempUserIndex);
-		var element = this.getMsgDiv(tempUser,msgCount,dimensions["msgDivWidth"],dimensions["msgDivHeight"]);
+		var element = this.getMsgDiv(tempUser,this.msgCount,dimensions["msgDivWidth"],dimensions["msgDivHeight"]);
 		
 		count = this.canvasMessageBoxes.length;
 		this.canvasMessageBoxes.unshift(count);
 		canvasId = this.currentUser+"dispMsgCanvas"+count;
 		
 		$("#"+this.chatId).find('#canvasLayer').append(element);
-		this.startDrawing(msgText,msgCount,dimensions,tempUserIndex);
+		this.startDrawing(msgText,this.msgCount,dimensions,tempUserIndex);
 		$("#"+this.chatId).find('#messageArea').val("");
 		};
 
