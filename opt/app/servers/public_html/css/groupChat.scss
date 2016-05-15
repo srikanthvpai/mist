@@ -12,6 +12,7 @@ $defaultAlpha: 1.00;
 $chatLayerWidth: 250px;
 $scrollPaneWidth: 10px;
 $inputMessageBoxWidth: 200px;
+$grpMsgPanelWidth: 550px;
 $defaultFont: "Roboto Slab", sans-serif;
 .midAlign {
 	 display: flex;
@@ -19,6 +20,10 @@ $defaultFont: "Roboto Slab", sans-serif;
 	 justify-content: center;
 }
 
+.mainGrpChatDiv {
+	height:700px;
+	background-color: white;
+}
 .chatCanvasMsg {
 	height: 160px;
 	width: 100%;
@@ -88,5 +93,99 @@ $defaultFont: "Roboto Slab", sans-serif;
 }
 
 .testBorder {
-	border-style:solid;
+	//border-style:solid;
 }
+
+.groupDiv {
+	border-style:solid;
+	//width:150px;
+	//height:150px;
+	background-color: gray;
+	//display: inline-block;
+	margin:5px;
+	font-size: .65em;
+}
+
+.grpChat {
+	height:600px;
+	//background-color: green;
+}
+
+.grpChatContainer {
+	height:600px;
+	//background-color: blue;
+	background-color: transparent;
+	//border-style: solid;
+}
+
+.grpMsgPanel {
+	  width: $grpMsgPanelWidth;
+	  //border-style:solid;
+	  height:500px;
+	 // background-color:rgba(255,255,255,0.7);
+	 // background-color: rgba(0,0,0,1);
+	  overflow-y: scroll;
+}
+.grpMsgArea {
+	width: $grpMsgPanelWidth - 150;
+	height: 80px;
+	margin: 5px;
+}
+.grpChatInput {
+	max-width: $grpMsgPanelWidth;
+	height:100px;
+	background-color:rgba(255,255,255,0.9);
+	padding: 0px;
+}
+.btnGrpMsg {
+	width: 90px;
+	display:block;
+	background-color: $colorBlue;
+	border-style: none;
+}
+.btnGrpThink {
+	width:90px;
+	display:block;
+	margin-top: 5px;
+	background-color: $colorYellow;
+	border-style: none;
+}
+.grpUsers {
+	height:400px;
+	//background-color: red;
+	background-color: transparent;
+}
+
+.grpUsers {
+	li {
+		padding:0px;
+		font-size: .7em;
+	}
+}
+.grpUser {
+	//border-style:solid;
+	width:150px;
+	height:40px;
+	//	display: flex;
+	text-align: center;
+	padding-top: 8px;
+}
+
+.groupRoomList {
+	height:600px;
+	//background-color: yellow;
+	background-color: transparent;
+	text-align: center;
+}
+
+.grpDesc {
+	//background-color: gray;
+	background-color: transparent;
+	width:300px;
+	height: 400px;
+	font-size: .65em;
+	margin-left: -15px;
+}
+
+
+

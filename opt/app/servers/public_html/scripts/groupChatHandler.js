@@ -5,15 +5,15 @@ var GroupChatHandler = function() {
 
 GroupChatHandler.prototype.sendGroupMessage = function()
 {
-      var text = $("#messageArea").val();
+      var text = $("#grpMsgArea").val();
       console.log("Trying to send this text : "+text);
       var textDiv = $("#grpMsgPanel");
      // textDiv.text(text);
      this.sendMessage(text,"Srikanth","group");
-      $("#messageArea").val("");
+      $("#grpMsgArea").val("");
 };
 var check = 1;
-GroupChatHandler.prototype.sendMessage = function(msgText,sender,recepient) {
-      this.groupChat.sendMessage(msgText,sender,recepient);
+GroupChatHandler.prototype.drawMessage = function(msgText) {
+      this.groupChat.drawMessage(msgText);
 };
 

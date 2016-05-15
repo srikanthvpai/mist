@@ -16,15 +16,20 @@ mistApp.controller('ChatController',['$scope','$cookies','Authentication','$http
 
 
 	$scope.fillChatBar = function() {
-	console.log("Fullfilling chat");
+	console.log("FILLING CHAT LIST");	
 	var currentUserObj = JSON.parse($window.sessionStorage.getItem("currentUserObj"));
+	for(var property in currentUserObj)
+	{
+		console.log(property+ " : "+ currentUserObj[""+property]);
+	}
+
 	$http({method: 'GET', url: CURRENT_URL+'/chatList',params:{userData : currentUserObj}}).
 	then(function(res){
 		console.log(" FILLING DATA : "+res.data);
 		$scope.chatList = res.data;
 	}).
 	catch(function(err){
-	console.log("Error trying to fill user data !!!");	
+	console.log("Error trying to fill user list in chat bar !!!");	
 	});
 	};
 
@@ -35,4 +40,5 @@ mistApp.controller('ChatController',['$scope','$cookies','Authentication','$http
 	$scope.$on("userNotAuth",function(event,args) {
 		$scope.chatBar = {url: ""};
 	});
+	$scope.fillChatBar();
 }]);

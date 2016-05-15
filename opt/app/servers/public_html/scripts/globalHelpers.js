@@ -17,3 +17,4 @@ $(function(){
 	console.log("In Ready function !!!!");
 	$(document).on("click", "#chatExpand", chatIconToggler);
 });
+

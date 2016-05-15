@@ -41,30 +41,51 @@ app.get('/public_html', function(req,res){
 
 app.get('/chatList', function(req,res){
 	console.log("Server : Trying to fullfill list");
-	var p = new Promise(function(resolve,reject){	
-	reqHandler.validateRequest(req,res,resolve,reject);
-	});
-	p.then(function(resolve,reject){
+	reqHandler.validateRequest(req,res).then(function(resolve,reject){
 		console.log("Sending to chathandler !!!!");
-		chatHandler.fillList(req,res,resolve,reject);
+		chatHandler.fillChatList(req,res);
 	}).catch(function(err){
 		console.log("ERROR ERROR Sending to chathandler !!!!"+err);
 	});
 });
 
+app.get('/groupList', function(req,res){
+	
+	reqHandler.validateRequest(req).then(function(){
+		return chatHandler.fillGroupList(req);
+	}).then(function(resultSet){
+		console.log("Result Set in Fill Group List : "+resultSet);
+		res.json(resultSet);
+	}).catch(function(err){
+		res.end();
+	});
+});
+
+app.get('/groupMessages', function(req,res){
+	reqHandler.validateRequest(req).then(function(){
+		chatHandler.getGroupMessages(req,res);
+	}).catch(function(err){
+		console.log("ERROR : "+err);
+		res.end();
+	});
+});
+
+app.get('/groupUserList', function(req,res){
+	reqHandler.validateRequest(req).then(function(){
+		return chatHandler.fillGroupUsers(req,res);
+	}).catch(function(err){
+		console.log("ERROR : "+err);
+		res.end();
+	});
+});
+
 app.get('/myFriends', function(req,res){
 	console.log("Server: Trying to fill friends list");
-	var p = new Promise(function(resolve,reject){
-		reqHandler.validateRequest(req,res,resolve,reject);
-	});
-	p.then(function(resolve,reject){
-		console.log("Sending to userHandler !!!!");
-		userHandler.fillFriends(req,res,resolve,reject);
+	reqHandler.validateRequest(req,res).then(function(){
+			userHandler.fillFriends(req,res);
 	}).catch(function(err){
-		console.log("ERROR ERROR filling friends list"+err);
+
 	});
-
-
 });
 
 
@@ -74,22 +95,32 @@ app.post('/public_html', function(req,res){
 
 app.post('/createGroupRoom',function(req,res){
 	var roomData  = JSON.parse(req.query.room);
-	check(roomData);
-	chatHandler.createGroupRoom(roomData.roomName,roomData.roomDesc);
-	res.end();
+	var userObj = JSON.parse(req.query.userData);
+	chatHandler.createGroupRoom(roomData.roomName,roomData.roomDesc).then(function(mistid_groupchatroom){
+			console.log("ROOM CREATED ID  : "+mistid_groupchatroom);
+			return chatHandler.subscribeToGroup(userObj,mistid_groupchatroom);
+	}).then(function(mistid_groupchatroom){
+		res.json(mistid_groupchatroom);
+	}).catch(function(err){
+		res.end();
+		console.log("ERROR TRYING TO CREATE GROUP CHAT ROOM"+err);
+	});
+	
+});
+
+app.post('/subscribeToGrp',function(req,res){
+	chatHandler.subscribeToGrp(req,res).then(function(){
+
+	}).catch(function(err){
+
+	});
 });
 
 app.post('/signUpUser',function(req,res){
 	console.log("SIGN UP USER : "+req.query.signUpUser);
-	var p = new Promise(function(resolve,reject){
-	userHandler.addUser(req.query.signUpUser,resolve,reject);
-	});
-	p.then(function(){
+	userHandler.addUser(req.query.signUpUser).then(function(){
 		res.end();
-	});
-	p.catch(function(){
-		console.log("DB ERROR IN USER INSERTION");
-		res.end();});
+	}).catch(function(err){});
 });
 
 function check(obj){
@@ -104,10 +135,7 @@ app.post('/authSuccess',function(req,res){
 });
 
 app.get('/data',function(req,res){
-	var p = new Promise(function(resolve,reject){	
-	reqHandler.validateRequest(req,res,resolve,reject);
-	});
-	p.then(function(){
+	reqHandler.validateRequest(req,res).then(function(){
 	console.log("Trying to send data");
 	var fileName = req.query.fileName;
 	var data = require("./data/"+fileName);

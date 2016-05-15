@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/jquery/jquery-ui.min.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script type="text/javascript" src="scripts/default/jquery.mousewheel.js"></script>
+	<script src="scripts/default/jquery.mousewheel.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 	<script src="scripts/default/jquery.jscrollpane.min.js"></script>
 	<script src="scripts/lib/angular/angular.min.js"></script>
@@ -22,6 +22,7 @@
 	<script src="scripts/lib/angular/angular-cookies.min.js"></script>
 	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+
 
 	<script type='text/javascript' src='scripts/globalDeclarations.js'></script>	
 	<script type='text/javascript' src="scripts/mistApp.js"></script>
@@ -49,65 +50,102 @@
 		<div data-ng-controller="GroupChatController" class="container-fluid">
 			<div class="row">
 
-			<div class="col-lg-3" style=";height:600px;background-color: yellow;text-align: center;">
+			<div class="col-lg-3 groupRoomList">
 
-				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
-				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
-				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
-				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
-				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
-				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
-				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
-				<div style="border-style:solid;width:150px;height:150px;background-color: gray;display: inline-block;margin:5px;"></div>
+				<div class="groupDiv" data-ng-repeat="group in groupList">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a data-ng-click="fillRoomData(group.roomId,group.roomName,group.roomDesc)" style="cursor: pointer;">{{group.roomName}}</a>
+						</div>
+						<div class="panel-body">
+							{{group.roomDesc}}
+						</div>
+					</div>
+				</div>
+				<!-- <div class="groupDiv"></div>
+				<div class="groupDiv"></div> -->
+				<button type="button" class="btn btn-default" data-toggle="modal" data-target="#createGrpForm">Create Room</button>
+
+				<div class="modal fade" id="createGrpForm" tabindex="-1" role="dialog" aria-labelledby="createGrpLabel">
+					<div class="modal-dialog modal-md" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="createGrpLabel">Create Room</h4>
+								<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button> -->
+							</div>	
+							<form name="createRoomForm" data-ng-submit="signUpRegister()">
+							<div class="modal-body">
+								
+								<div class="panel panel-default">
+								<div class="panel-body">
+									<input class="form-control" data-ng-model="createRoom.name" placeholder="Enter Room Title" type="text" style="width:100%;">
+									<textarea class="form-control" data-ng-model="createRoom.desc" placeholder="Enter Room Description" style="width:100%;margin-top: 5px;height: 80px;"></textarea>
+									
+								</div>
+								</div>
+								
+							</div>
+							<div class="modal-footer">
+								<button type="submit" data-ng-click="createGroupRoom()" class="btn btn-primary">Create</button>
+								<button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+							</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
 
 			</div>
-			<div id="grpChat" class="col-lg-9" style=";height:600px;background-color: green;">
+			<div id="grpChat" class="col-lg-9 grpChat">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="hidden-xs col-lg-10 midAlign" style=";height:600px;background-color: blue;">
+						<div class="hidden-xs col-lg-10 grpChatContainer" >
+							
 							<div class="container-fluid">
+							<div class="row midAlign">
+							<div class="grpDesc col-md-4">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											{{activeRoom.roomName}}
+										</div>
+										<div class="panel-body">
+											{{activeRoom.roomDesc}}
+										</div>
+									</div>
+							</div>
+							<div class="container-fluid pull-right col-md-8">
 								<div class="row">
-									<div id="grpMsgPanel" class="col-sm-12"  style="width: 700px;border-style:solid;height:500px;background-color:rgba(255,255,255,0.7);">
+									<div id="grpMsgPanel" class="grpMsgPanel col-sm-12">
 										<div id='canvasLayer'></div>
 									</div>
 								</div>
-								<div class="row midAlign">
-									<div style="width: 700px;;height:100px;background-color:rgba(255,255,255,0.9)">
+								<div class="row">
+									<div class="grpChatInput midAlign">
 										<div class="col-sm-9">
-										<textarea id="messageArea" style="min-width:500px;height: 100px;font-size:0.85em;"></textarea>
+										<textarea class="grpMsgArea" data-ng-model="grpMsg" id="grpMsgArea"></textarea>
 										</div>
-										<div class="col-sm-3" style="padding:5px;">
-											<button class="btn btn-warning" style="width:100%;display:block;" onclick="sendGroupMessage()">Send</button>
-											<button class="btn btn-warning" style="width:100%;display:block;margin-top: 5px;" data-ng-click="createGroupRoom()">Think</button>
+										<div class="col-sm-3">
+											<button class="btn btn-warning btnGrpMsg" data-ng-click="sendGroupMessage()">Send</button>
+											<button class="btn btn-warning btnGrpThink" data-ng-click="subScribe()">Think</button>
 										</div>
-
 									</div>
 								</div>
 							</div>
+
+							</div>
+							</div>
+
 						</div>
-					 	<div class="col-lg-2" style=";height:400px;background-color: red;">
+					 	<div class="col-lg-2 grpUsers">
 							<div class="container-fluid">
 								<div class="row">
 									<ul class="list-group">
 										<div class="container-fluid">
-										<div class="row">	
-										<li class="list-group-item midAlign col-xs-3 col-lg-12" style="padding:0px;">
-											<div style="border-style:solid; width:150px;height:40px;"></div>
-										</li>
-										<li class="list-group-item midAlign col-xs-3 col-lg-12" style="padding:0px;">
-											<div style="border-style:solid; width:150px;height:40px;"></div>
-										</li>
-										<li class="list-group-item midAlign col-xs-3 col-lg-12" style="padding:0px;">
-											<div style="border-style:solid; width:150px;height:40px;"></div>
-										</li>
-										<li class="list-group-item midAlign col-xs-3 col-lg-12" style="padding:0px;">
-											<div style="border-style:solid; width:150px;height:40px;"></div>
-										</li>
-										<li class="list-group-item midAlign col-xs-3 col-lg-12" style="padding:0px;">
-											<div style="border-style:solid; width:150px;height:40px;"></div>
-										</li>
-										<li class="list-group-item midAlign col-sm-3 col-lg-12" style="padding:0px;">
-											<div style="border-style:solid; width:150px;height:40px;"></div>
+										<div id="userListDiv" class="row">	
+										<li class="list-group-item midAlign col-xs-3 col-lg-12"  data-ng-repeat="user in grpUserList">
+											<div class="grpUser">{{user.firstName+" "+user.lastName}}</div>
 										</li>
 										</div>
 										</div>

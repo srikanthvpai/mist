@@ -5,7 +5,7 @@ var RequestHandler = function() {
 	this.counter = 0;
 };
 
-RequestHandler.prototype.validateRequest = function(req,res,callback,callbackerr) {
+RequestHandler.prototype.validateRequest = function(req,res) {
 	console.log("Validating request");
 	var mistTrackCookie = req.cookies.mistTrack;
 	console.log("Validating request"+mistTrackCookie);
@@ -18,8 +18,8 @@ RequestHandler.prototype.validateRequest = function(req,res,callback,callbackerr
 	{
 		console.log("not able to DE-AUTHENTIFYING!!!! : "+mistTrackCookie);
 	}
+	return Promise.resolve(true);
 	//res.redirect('/mainPage.html#/login');
-	callback();
 };
 
 
@@ -27,13 +27,7 @@ RequestHandler.prototype.authorizeUser = function(req,res) {
 
 	console.log("Request authData: "+req.query.userData);
 	var userDataObj = JSON.parse(req.query.userData);
-	this.Promise.promisifyAll(this.userHandler);
-	var that = this;
-	var p = new Promise(function(resolve,reject){
-		console.log("Inside authorization!!!");
-		that.userHandler.fetchUser(userDataObj.uid,resolve,reject);
-	});
-	p.then(function(resultSet){
+	this.userHandler.fetchUser(userDataObj.uid).then(function(resultSet){
 		console.log("Got result set !!!!"+resultSet);
 		if(resultSet[0])
 		{
@@ -52,8 +46,7 @@ RequestHandler.prototype.authorizeUser = function(req,res) {
 			res.end();
 		}
 
-	});
-	p.catch(function(err){
+	}).catch(function(err){
 		console.log("ERROR DURING DB FETCH "+err);
 	});
 };

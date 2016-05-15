@@ -1,9 +1,11 @@
 var ChatHandler = function(server) {
 
+	this.io = require("socket.io")(server);
 	this.convHandler = require('../handler/convHandler.js')();
+	var GroupChatHandler = require('../handler/grpChatHandler.js');
 	var DBService = require('../service/dbService.js');
 	this.dbService = new DBService();
-	this.io = require("socket.io")(server);
+	this.grpChatHandler = new GroupChatHandler(this.io);
 	this.nameSpaces = ["/defaultChat"];
 	this.rooms = [];
 	this.adminSocket = null;
@@ -15,12 +17,10 @@ var ChatHandler = function(server) {
 
 	socket.on("initialize",function(userDataString){ that.initialize(userDataString,socket);});
 
-	socket.on("adminConnect",function(messageString){ that.adminConnect(messageString,socket); });
-
 	socket.on("message",function(msgStringObj){ that.sendMessage(msgStringObj,socket); });
 });
 
-}	
+}
 
 
 ChatHandler.prototype.initialize = function(userDataString,socket) {
@@ -35,7 +35,6 @@ ChatHandler.prototype.initialize = function(userDataString,socket) {
 	console.log("TRYING TO JOIN A ROOM : "+roomId);
 	socket.join(roomId);
 	socket.room = roomId;
-	this.socketList.roomId = socket;
 };
 
 ChatHandler.prototype.initializeRoom = function(roomID,userData)
@@ -50,43 +49,25 @@ ChatHandler.prototype.createGroupRoom = function(roomName,roomDescription)
 	var query2 = "select mistid_groupchatroom from mist01.mistgroupchatroom where room_name='";
 		query2 += roomName+"'";
 		console.log(query1);
-	var that = this;
-	var p = new Promise(function(resolve,reject){
-		that.dbService.executeQuery(query1,resolve,reject);
-	});
-	p.then(function()
-	{
-		console.log(":::::::"+that.dbService.executeQuery(query2,p.resolve,p.reject));
+	var that = this;	
+	return this.dbService.executeQuery(query1).then(function(){
+		return that.dbService.executeQueryFetch(query2);
 	}).then(function(resultSet){
-		if(resultSet[0] && resultSet[0].mistid_groupchatroom)
-		{
-			console.log("Created groupRoom "+resultSet[0].mistid_groupchatroom);
+		if(resultSet && resultSet[0] && resultSet[0].mistid_groupchatroom){
 			return resultSet[0].mistid_groupchatroom;
 		}
 	}).catch(function(err){
-		console.log("111 ERROR ERROR 1111 TRYING TO CREATE A GROUP ROOM"+err);
-	}).catch(function(err){
-		console.log("222 ERROR ERROR 2222 TRYING TO CREATE A GROUP ROOM"+err);
+
 	});
-}
+};	
 
-ChatHandler.prototype.adminConnect = function(messageString,socket)
-{
-	console.log("Admin connecting !!!");
-	this.isAdminConnected = true;
-	this.adminSocket = socket;
-	var newConnTransmitObject;
-	var socketConnected;
-}
+ChatHandler.prototype.subscribeToGroup = function(userObj,roomId,roomObj) {
+		return this.grpChatHandler.subscribeToGroup(userObj,roomId);
+};
 
-
-ChatHandler.prototype.adminNotConnected = function(socket)
-{
-	var newConnTransmitObject = {message:"Hi, Sorry, I am not available right now, I will reach out to you as soon as I am back" , sender: "administrator",recepient: socket["sender"]};
-	socket.emit("message",JSON.stringify(newConnTransmitObject));
-}
-
-
+ChatHandler.prototype.sendGroupMessage = function(grpMsgObj){
+	this.grpChatHandler.sendGroupMessage(grpMsgObj);
+};
 
 ChatHandler.prototype.sendMessage = function(msgStringObj,socket)
 {
@@ -114,7 +95,7 @@ ChatHandler.prototype.sendMessage = function(msgStringObj,socket)
 		// });
 	    /*});*/
 		
-}
+};
 
 ChatHandler.prototype.processMessage = function(msgToBeParsed,callback,callbackerr){
 	
@@ -128,18 +109,13 @@ ChatHandler.prototype.addConv = function(participant1,participant2){
 	return this.convHandler.addConv(participant1,participant2);	
 };
 
-ChatHandler.prototype.fillList = function(req,res,callback,callbackerr)
+ChatHandler.prototype.fillChatList = function(req,res)
 {
 	var currentUserObj = JSON.parse(req.query.userData);
-	check(currentUserObj);
 	var query = "select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser ";
 	query+= "where binary firebase_id<>'"+currentUserObj.firebaseId+"'";
-	var that = this;
 	console.log(query);
-	var p = new Promise(function(resolve,reject) {
-		that.dbService.executeQuery(query,resolve,reject);
-	});
-	p.then(function(resultSet){
+	this.dbService.executeQuery(query).then(function(resultSet){
 		var friendData = [];
 		resultSet.forEach(function(userRow){
 			var userObj = {};
@@ -150,12 +126,24 @@ ChatHandler.prototype.fillList = function(req,res,callback,callbackerr)
 			friendData.push(userObj);
 		});
 		res.json(friendData);
-
 	}).catch(function(err){
 		console.log("ERROR IN CHAT HANDLER : "+err);
 		res.end();
 	});
 };
+ChatHandler.prototype.fillGroupList = function(req){
+	var userObj = JSON.parse(req.query.userData); 
+	return this.grpChatHandler.fillGroupList(userObj);
+};
+
+ChatHandler.prototype.fillGroupUsers = function(req,res){
+	return this.grpChatHandler.fillGroupUsers(req,res);
+};
+
+ChatHandler.prototype.getGroupMessages = function(req,res) {
+	this.grpChatHandler.getGroupMessages(req,res);
+};
+
 
 function check(obj){
 	for(var property in obj)
@@ -185,6 +173,6 @@ ChatHandler.prototype.getCurrentTime = function() {
 
 	return month+"-"+day+"-"+year+" "+hour+":"+min+":"+sec;
 
-}
+};
 
 module.exports = ChatHandler;

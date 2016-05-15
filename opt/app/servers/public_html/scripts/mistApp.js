@@ -21,6 +21,9 @@ mistApp.config(['$routeProvider', function($routeProvider){
 	when('/profile',{
 		templateUrl: 'views/profile-index.html'
 	}).
+	when('/chatStack',{
+		templateUrl: 'views/chat-index.html'
+	}).
 	otherwise({
 		redirectTo: '/login'
 	})
@@ -69,4 +72,15 @@ mistApp.controller('ChatBarController',['$scope','$cookies','Authentication',fun
 	$scope.$on("userNotAuth",function(event,args) {
 		$scope.chatBar = {url: ""};
 	});
+}]);
+
+mistApp.run(['$rootScope', '$location', 'Authentication', function ($rootScope, $location, Authentication) {
+    $rootScope.$on('$routeChangeStart', function (event) {
+    	console.log("AUTHENICATION AUTHENTICITY : "+Authentication.isAuthenticated());
+
+        if (!Authentication.isAuthenticated()) {
+            console.log('DENY');
+			$location.path('/login');
+        }
+    });
 }]);

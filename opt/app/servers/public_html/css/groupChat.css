@@ -4,6 +4,10 @@
   align-items: center;
   justify-content: center; }
 
+.mainGrpChatDiv {
+  height: 700px;
+  background-color: white; }
+
 .chatCanvasMsg {
   height: 160px;
   width: 100%; }
@@ -67,7 +71,72 @@
   background-image: url("../images/user-Icon.png");
   border-radius: 2px; }
 
-.testBorder {
-  border-style: solid; }
+.groupDiv {
+  border-style: solid;
+  background-color: gray;
+  margin: 5px;
+  font-size: .65em; }
+
+.grpChat {
+  height: 600px; }
+
+.grpChatContainer {
+  height: 600px;
+  background-color: transparent; }
+
+.grpMsgPanel {
+  width: 550px;
+  height: 500px;
+  overflow-y: scroll; }
+
+.grpMsgArea {
+  width: 400px;
+  height: 80px;
+  margin: 5px; }
+
+.grpChatInput {
+  max-width: 550px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0px; }
+
+.btnGrpMsg {
+  width: 90px;
+  display: block;
+  background-color: #4b54ff;
+  border-style: none; }
+
+.btnGrpThink {
+  width: 90px;
+  display: block;
+  margin-top: 5px;
+  background-color: #ffe019;
+  border-style: none; }
+
+.grpUsers {
+  height: 400px;
+  background-color: transparent; }
+
+.grpUsers li {
+  padding: 0px;
+  font-size: .7em; }
+
+.grpUser {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  padding-top: 8px; }
+
+.groupRoomList {
+  height: 600px;
+  background-color: transparent;
+  text-align: center; }
+
+.grpDesc {
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  font-size: .65em;
+  margin-left: -15px; }
 
 /*# sourceMappingURL=groupChat.css.map */

@@ -4,6 +4,7 @@ gsutil defacl set public-read gs://mingle-stack
 gcloud auth login
 gcloud config set compute/zone us-east1-c
 gcloud compute ssh my-app-instance
+gcloud compute ssh nginx-plus-1-vm
 gcloud config set project mingle-stack
 gcloud components update
 sudo chown -R svasudev /etc/nginx/

@@ -4,7 +4,7 @@ module.exports= function ConvHandler() {
 	var ConvService = require('../service/convService.js');
 	var DBService = require('../service/dbService.js');
 	var convList = [];
-
+	var roomList = [];
 	var dbService = new DBService();
 	var convService = new ConvService(dbService);
 	

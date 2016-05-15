@@ -95,7 +95,7 @@ $bodyPaddingTop: 170px;
 	width: $thinkAreaWidth+$chatIndicatorWidth+(2*$thinkAreaBorder);
 	right: -($thinkAreaWidth+$chatIndicatorWidth+(2*$thinkAreaBorder));
 	height:  $chatLayerHeight;
-	top: bodyPaddingTop;
+	top: $bodyPaddingTop;
 	right: -($thinkAreaWidth+$chatIndicatorWidth+(2*$thinkAreaBorder));
 	position: fixed; 
 	background-color: transparent;

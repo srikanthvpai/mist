@@ -3,7 +3,7 @@ var DBService = function() {
 	this.mySql = require('mysql');
 	this.Promise = require('bluebird');
 	this.Promise.promisifyAll(this.mySql);
-	this.pool = this.mySql.createPool({connectionLimit: 1,
+	this.pool = this.mySql.createPool({connectionLimit: 10,
 		host: config.get('MYSQL_HOST'),
 		user: config.get('MYSQL_USER'),
 		password: config.get('MYSQL_PASSWORD'),
@@ -16,42 +16,23 @@ DBService.prototype.getConnection = function(){
 	return this.pool.getConnection;
 };
 
-DBService.prototype.executeQuery = function(query,callback,callbackerr){
-	console.log("Query to DB : "+query);
-		var that = this;
-		this.pool.getConnectionAsync().then(function(connection){
-			that.Promise.promisifyAll(connection);
-			console.log("Going to execute Qquery !!!!");
-			connection.queryAsync(query).then(function(resultSet){
-				connection.release();
-				for(var property in resultSet)
-				{
-					console.log(property+ " : "+resultSet[""+property]);
-					for(var property in resultSet[0])
-					{
-						console.log(property+" 0 0 0 0 "+resultSet[0][""+property]);
-					}
-				}
-
-				/*if(resultSet[0])
-					console.log(resultSet[0].mistid_groupchatroom);
-				if(callback)*/
-					callback(resultSet);
-				//return resultSet;
-			}).catch(function(err){
-				console.log("DB ERROR : "+err);
-				connection.release();
-				callbackerr(err);
-			});
-		}).catch(function(err){
-			console.log("DB ERROR : "+err);
+DBService.prototype.executeQuery = function(query){
+		var that=this,connection;
+		console.log("Query : "+query);
+		return this.pool.getConnectionAsync().then(function(_connection){
+			connection = that.Promise.promisifyAll(_connection);
+			return connection.queryAsync(query);
+		}).then(function(resultSet){
 			connection.release();
-			callbackerr(err);
+			return resultSet;
+		}).catch(function(err){
+			if(connection)
+				connection.release();
+			throw err;
 		});
-		
 	} ;
-DBService.prototype.executeQueryFetch  = function(query,callback,callbackerr){
-		this.executeQuery(query,callback,callbackerr);
+DBService.prototype.executeQueryFetch  = function(query){
+		return this.executeQuery(query);
 };
 
 

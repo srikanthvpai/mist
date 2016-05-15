@@ -1,19 +1,20 @@
 mistApp.controller('QuestController',['$scope','$http',function($scope,$http){
-
+	console.log("going thru quest control");
 	$scope.midTemplate = {url:  '/views/quest-list.html'};
 	$http.get(CURRENT_URL+'/data/',{params: {fileName: 'questSubjects.json'}}).
-	then(function(data){
-		$scope.questSubjects = data.data;
+	then(function(res){
+		console.log("GETTING QUESTION LIST "+res.data);
+		$scope.questSubjects = res.data;
 	});
 	$http({method: 'GET',url: CURRENT_URL+'/data/',
 	params: {fileName: 'questionsList.json'}
-	}).then(function(data){
-		$scope.questionsList = data.data;
+	}).then(function(res){
+		$scope.questionsList = res.data;
 	});
 	$http.get(CURRENT_URL+'/data/',{params: {fileName: 'questionsList.json'}}).
-	then(function(data){
-		console.log(data.data);
-		$scope.popQuestions = data.data;
+	then(function(res){
+		console.log(res.data);
+		$scope.popQuestions = res.data;
 	});
 	$scope.switchMidView = function(tab) {	
 		console.log("I am in tab"+tab);

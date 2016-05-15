@@ -7,25 +7,25 @@
 					<div class="navbar-header mistHeader">
 						<div class="container-fluid">
 						<div class="row">
-							<div class="col-xs-6 mistHeaderIcon2 pull-right">
+							<div class="col-xs-12 mistHeaderIcon2 pull-right">
 							<a class="navbar-brand" href="#featured"> <h1>Mingle Stack</h1></a>
 							</div>
-							<div class="col-xs-6 toggleDiv" data-ng-include="headerSW.url">
+							<div class="col-xs-12 toggleDiv" data-ng-include="headerSW.url">
 							</div>
 						</div>
 						</div>
 					</div>
 				</div><!-- navbar-header -->
-				<div class="hidden-sm hidden-xs col-md-4 newsFeed">
+				<div class="hidden-xs hidden-sm hidden-md col-lg-4 newsFeed">
 
 				</div>
 				<div  class="col-xs-12 col-md-4 mistNavLinks">
-					<div class="container-fluid">
+					<div class="container-fluid collapse navbar-collapse" id="collapse">
 						<div class="row">
-							<div class="col-xs-12">
-					<div class="collapse navbar-collapse" id="collapse">
+							<div class="col-xs-12 col-sm-12">
+					<div>
 						<ul class="nav navbar-nav">
-							<li class="btn btn-default active mainNavListBtn"><a href="#/homePage">Home</a></li>
+							<li class="btn btn-default mainNavListBtn"><a href="#/homePage">Home</a></li>
 							<li class="btn btn-default mainNavListBtn"><a href="#/queStack">Questack</a></li>
 							<li class="btn btn-default mainNavListBtn"><a href="#/poStack">Postack</a></li>
 						</ul>	
@@ -33,12 +33,12 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-12">
-					<div class="collapse navbar-collapse" id="collapse">
+							<div class="col-xs-12 col-sm-12">
+					<div>
 						<ul class="nav navbar-nav">
-							<li class="btn btn-default active mainNavListBtn"><a href="#/techStack">Techstack</a></li>
-							<li class="btn btn-default active mainNavListBtn"><a ng-click="signOut()">Logout</a></li>
-							<li class="btn btn-default active mainNavListBtn"><a href="#/chatStack">Chatstack</a></li>
+							<li class="btn btn-default mainNavListBtn"><a href="#/queStack">Techstack</a></li>
+							<li class="btn btn-default mainNavListBtn"><a ng-click="signOut()">Logout</a></li>
+							<li class="btn btn-default mainNavListBtn"><a href="#/chatStack">Chatstack</a></li>
 						</ul>	
 					</div>
 							</div>

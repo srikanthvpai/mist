@@ -1,0 +1,122 @@
+<div class="mainGrpChatDiv">
+	
+	<div data-ng-controller="GroupChatController" class="container-fluid">
+		<div class="row">
+
+			<div class="col-lg-3 groupRoomList">
+
+				<div class="groupDiv" data-ng-repeat="group in groupList">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a data-ng-click="fillRoomData(group.roomId,group.roomName,group.roomDesc)" style="cursor: pointer;">{{group.roomName}}</a>
+						</div>
+						<div class="panel-body">
+							{{group.roomDesc}}
+						</div>
+					</div>
+				</div>
+			<!-- <div class="groupDiv"></div>
+			<div class="groupDiv"></div> -->
+			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#createGrpForm">Create Room</button>
+
+			<div class="modal fade" id="createGrpForm" tabindex="-1" role="dialog" aria-labelledby="createGrpLabel">
+				<div class="modal-dialog modal-md" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title" id="createGrpLabel">Create Room</h4>
+							<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button> -->
+						</div>	
+						<form name="createRoomForm" data-ng-submit="signUpRegister()">
+							<div class="modal-body">
+								
+								<div class="panel panel-default">
+									<div class="panel-body">
+										<input class="form-control" data-ng-model="createRoom.name" placeholder="Enter Room Title" type="text" style="width:100%;">
+										<textarea class="form-control" data-ng-model="createRoom.desc" placeholder="Enter Room Description" style="width:100%;margin-top: 5px;height: 80px;"></textarea>
+										
+									</div>
+								</div>
+								
+							</div>
+							<div class="modal-footer">
+								<button type="submit" data-ng-click="createGroupRoom()" class="btn btn-primary">Create</button>
+								<button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div id="grpChat" class="col-lg-9 grpChat">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="hidden-xs col-md-9 grpChatContainer" >
+						
+						<div class="container-fluid">
+							<div class="row midAlign">
+								<div class="grpDesc col-md-4">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											{{activeRoom.roomName}}
+										</div>
+										<div class="panel-body">
+											{{activeRoom.roomDesc}}
+										</div>
+									</div>
+								</div>
+								<div class="container-fluid pull-right col-md-8 ">
+									<div class="row">
+										<div id="grpMsgPanel" class="grpMsgPanel col-sm-12">
+											<div id='canvasLayer'></div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="grpChatInput midAlign">
+											<div class="col-sm-9">
+												<textarea class="grpMsgArea" data-ng-model="grpMsg" id="grpMsgArea"></textarea>
+											</div>
+											<div class="col-sm-3">
+												<button class="btn btn-warning btnGrpMsg" data-ng-click="sendGroupMessage()">Send</button>
+												<button class="btn btn-warning btnGrpThink" data-ng-click="subScribe()">Think</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-3 grpUsers">
+						<div class="container-fluid">
+							<div class="row">
+								<ul class="list-group">
+									<div class="container-fluid">
+										<div id="userListDiv" class="row">	
+											<li class="list-group-item midAlign col-xs-3 col-lg-12"  data-ng-repeat="user in grpUserList">
+												<div class="grpUser">{{user.firstName+" "+user.lastName}}</div>
+											</li>
+										</div>
+									</div>
+								</ul>
+							</div>
+							<div class="row">
+
+							</div>
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>	
+
+
+
+</div>

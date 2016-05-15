@@ -3,12 +3,1803 @@
 > node server.js
 
 *****SRIKANTH SRIKANTH***** listening on 8080
-roomName: test1
-roomDesc: Test room dummy room
-insert into mist01.mistgroupchatroom(room_name,room_description) values('test1','Test room dummy room')
-Query to DB : insert into mist01.mistgroupchatroom(room_name,room_description) values('test1','Test room dummy room')
-Going to execute Qquery !!!!
-Query to DB : select mistid_groupchatroom from mist01.mistgroupchatroom where room_name='test1'
-111 ERROR ERROR 1111 TRYING TO CREATE A GROUP ROOMTypeError: Cannot read property '0' of undefined
-Going to execute Qquery !!!!
-Terminate batch job (Y/N)? 
+Request authData: {"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InNyaWthbnRodnBhaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImlhdCI6MTQ2MjkxMTIzMywidiI6MCwiZCI6eyJwcm92aWRlciI6InBhc3N3b3JkIiwidWlkIjoiYjMwZGFhMTktNWE4Ny00ODAzLWE0MmItZjBlZDllNzJmZGI4In19.y8J4OHX8-PHBtOk_nmBeG9VTWsgB8Xe4lCZBvko5yi4","password":{"email":"srikanthvpai@gmail.com","isTemporaryPassword":false,"profileImageURL":"https://secure.gravatar.com/avatar/424fd206fcac9c9e48385fb95f682869?d=retro"},"auth":{"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":{"email_verified":false,"email":"srikanthvpai@gmail.com","exp":1462997633,"iat":1462911233,"sub":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","auth_time":1462911233,"firebase":{"identities":{"email":["srikanthvpai@gmail.com"]}}}},"expires":1462997633}
+Inside USER HANDLER doing !!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8' LIMIT 1
+Got result set !!!![object Object]
+USER FOUND !!!
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+ERROR IN CHAT HANDLER : Error: Handshake inactivity timeout
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Validating request
+Validating requestundefined
+not able to DE-AUTHENTIFYING!!!! : undefined
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+REQUESTED INDEX
+Request authData: {"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InNyaWthbnRodnBhaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImlhdCI6MTQ2MzMzODQyNCwidiI6MCwiZCI6eyJwcm92aWRlciI6InBhc3N3b3JkIiwidWlkIjoiYjMwZGFhMTktNWE4Ny00ODAzLWE0MmItZjBlZDllNzJmZGI4In19.-QIoy0vZmK5oTu5zI-v-FI_HAO9CIcxdGrYfBGQy9UY","password":{"email":"srikanthvpai@gmail.com","isTemporaryPassword":false,"profileImageURL":"https://secure.gravatar.com/avatar/424fd206fcac9c9e48385fb95f682869?d=retro"},"auth":{"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":{"email_verified":false,"email":"srikanthvpai@gmail.com","exp":1463424824,"iat":1463338424,"sub":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","auth_time":1463338424,"firebase":{"identities":{"email":["srikanthvpai@gmail.com"]}}}},"expires":1463424824}
+Inside USER HANDLER doing !!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8' LIMIT 1
+Got result set !!!![object Object]
+USER FOUND !!!
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Server: Trying to fill friends list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+firstName: Srikanth
+lastName: Pai
+email: srikanthvpai@gmail.com
+firebaseId: b30daa19-5a87-4803-a42b-f0ed9e72fdb8
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Request authData: {"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InNyaWthbnRodnBhaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImlhdCI6MTQ2MzM1MDYwMywidiI6MCwiZCI6eyJwcm92aWRlciI6InBhc3N3b3JkIiwidWlkIjoiYjMwZGFhMTktNWE4Ny00ODAzLWE0MmItZjBlZDllNzJmZGI4In19.5NvkiotSuaQNnQQ2UKUcEnfLDg7NEQ4JrXxZXaSDuBc","password":{"email":"srikanthvpai@gmail.com","isTemporaryPassword":false,"profileImageURL":"https://secure.gravatar.com/avatar/424fd206fcac9c9e48385fb95f682869?d=retro"},"auth":{"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":{"email_verified":false,"email":"srikanthvpai@gmail.com","exp":1463437003,"iat":1463350603,"sub":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","auth_time":1463350603,"firebase":{"identities":{"email":["srikanthvpai@gmail.com"]}}}},"expires":1463437003}
+Inside USER HANDLER doing !!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8' LIMIT 1
+Got result set !!!![object Object]
+USER FOUND !!!
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+RETURNED CONV ID IS : 1001
+TRYING TO JOIN A ROOM : 1001
+RETURNED CONV ID IS : 1002
+TRYING TO JOIN A ROOM : 1002
+RETURNED CONV ID IS : 1003
+TRYING TO JOIN A ROOM : 1003
+Request authData: {"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InNyaWthbnRodnBhaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImlhdCI6MTQ2MzM1MDY2NiwidiI6MCwiZCI6eyJwcm92aWRlciI6InBhc3N3b3JkIiwidWlkIjoiYjMwZGFhMTktNWE4Ny00ODAzLWE0MmItZjBlZDllNzJmZGI4In19.XetuKH7a0zsizKDsnCzdj_ZvYBW4jwTePmA_8xCjzSU","password":{"email":"srikanthvpai@gmail.com","isTemporaryPassword":false,"profileImageURL":"https://secure.gravatar.com/avatar/424fd206fcac9c9e48385fb95f682869?d=retro"},"auth":{"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":{"email_verified":false,"email":"srikanthvpai@gmail.com","exp":1463437066,"iat":1463350666,"sub":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","auth_time":1463350666,"firebase":{"identities":{"email":["srikanthvpai@gmail.com"]}}}},"expires":1463437066}
+Inside USER HANDLER doing !!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8' LIMIT 1
+Got result set !!!![object Object]
+USER FOUND !!!
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Request authData: {"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InNyaWthbnRodnBhaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImlhdCI6MTQ2MzM1MDY4MCwidiI6MCwiZCI6eyJwcm92aWRlciI6InBhc3N3b3JkIiwidWlkIjoiYjMwZGFhMTktNWE4Ny00ODAzLWE0MmItZjBlZDllNzJmZGI4In19._HAbRKnBUCTCQ6TDf2zPU4SWHARNfRTZoGUWuSVywdY","password":{"email":"srikanthvpai@gmail.com","isTemporaryPassword":false,"profileImageURL":"https://secure.gravatar.com/avatar/424fd206fcac9c9e48385fb95f682869?d=retro"},"auth":{"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":{"email_verified":false,"email":"srikanthvpai@gmail.com","exp":1463437080,"iat":1463350680,"sub":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","auth_time":1463350680,"firebase":{"identities":{"email":["srikanthvpai@gmail.com"]}}}},"expires":1463437080}
+Inside USER HANDLER doing !!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8' LIMIT 1
+Got result set !!!![object Object]
+USER FOUND !!!
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Request authData: {"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InNyaWthbnRodnBhaUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImlhdCI6MTQ2MzM1MDcxNCwidiI6MCwiZCI6eyJwcm92aWRlciI6InBhc3N3b3JkIiwidWlkIjoiYjMwZGFhMTktNWE4Ny00ODAzLWE0MmItZjBlZDllNzJmZGI4In19.h7Twr7SfU3stfOPrEIrrmHKftybZmhwxkplCXetoE5Q","password":{"email":"srikanthvpai@gmail.com","isTemporaryPassword":false,"profileImageURL":"https://secure.gravatar.com/avatar/424fd206fcac9c9e48385fb95f682869?d=retro"},"auth":{"provider":"password","uid":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","token":{"email_verified":false,"email":"srikanthvpai@gmail.com","exp":1463437114,"iat":1463350714,"sub":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8","auth_time":1463350714,"firebase":{"identities":{"email":["srikanthvpai@gmail.com"]}}}},"expires":1463437114}
+Inside USER HANDLER doing !!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8' LIMIT 1
+Got result set !!!![object Object]
+USER FOUND !!!
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Trying to send data
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Server : Trying to fullfill list
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Sending to chathandler !!!!
+select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Query : select first_name,last_name,birth_date,join_date,email_id,firebase_id from mist01.mistuser where binary firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select a.mistid_groupchatroom roomId,a.room_name roomName,a.room_description roomDesc from mist01.mistgroupchatroom as a inner join mist01.mistgrpsubscription as b ON a.mistid_groupchatroom=b.roomId where b.firebase_id='b30daa19-5a87-4803-a42b-f0ed9e72fdb8'
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 1
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '1' order by enter_date desc limit 10
+Result Set in Fill Group List : [object Object],[object Object],[object Object]
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='1'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 60
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '60' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='60'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+REQUESTED ROOM ID : 64
+Query : select * from mist01.mistgroupmsg where mistid_groupchatroom = '64' order by enter_date desc limit 10
+Validating request
+Validating requestb30daa19-5a87-4803-a42b-f0ed9e72fdb8
+DE-AUTHENTIFYING!!!!
+Query : select first_name,last_name,birth_date,join_date,email_id,a.firebase_id from mist01.mistuser as a inner join mist01.mistgrpsubscription as b ON a.firebase_id=b.firebase_id where a.firebase_id<>'b30daa19-5a87-4803-a42b-f0ed9e72fdb8' and b.roomId='64'
+initialize : {"user":{"firstName":"Srikanth","lastName":"Pai","email":"srikanthvpai@gmail.com","firebaseId":"b30daa19-5a87-4803-a42b-f0ed9e72fdb8"},"roomId":1}

@@ -2,17 +2,8 @@ var GroupChat = function() {
   this.canvasMessageBoxes = [];
 }
 
-GroupChat.prototype.sendGroupMessage = function()
-{
-      var text = $("#messageArea").val();
-      console.log("Trying to send this text : "+text);
-      var textDiv = $("#grpMsgPanel");
-     // textDiv.text(text);
-     this.sendMessage(text,"Srikanth","group");
-      $("#messageArea").val("");
-};
 var check = 1;
-GroupChat.prototype.sendMessage = function(msgText,sender,recepient) {
+GroupChat.prototype.drawMessage = function(msgText) {
 
     msgCount = this.canvasMessageBoxes.length+1;
     console.log("msgCount : "+msgCount);
@@ -30,7 +21,7 @@ GroupChat.prototype.sendMessage = function(msgText,sender,recepient) {
     $("#grpMsgPanel").find('#canvasLayer').append(element);
     this.startDrawing(msgText,msgCount,dimensions,check);
     console.log("DIMENSION : "+dimensions["textBoxHeight"]);
-    $("#grpChat").find('#messageArea').val("");
+    $("#grpChat").find('#grpMsgArea').val("");
 };
 
 GroupChat.prototype.startDrawing = function (text,msgCount,dimensions,userIndex)
@@ -145,18 +136,6 @@ GroupChat.prototype.drawBigTrail = function(text,msgCount,userIndex,dimensions)
     ctx.quadraticCurveTo(posX+30,posY+22,posX+35,posY);
     }
     ctx.fill();
-  };
-GroupChat.prototype.intitalizeWebSocket = function(id) {
-    this.socket = io(CURRENT_URL+'/defaultChat'); 
-    var userData = {"sender": this.currentUser,"recepient": this.otherUser};
-    var that = this;
-    if(typeof adminMode==='undefined')
-    {
-      this.socket.emit("initialize",JSON.stringify(userData));
-    } 
-    this.socket.on("message",function(message){
-      that.drawMessage(message);
-    });
   };
 
 GroupChat.prototype.getMsgDiv = function(id,msgCount,msgDivWidth,msgDivHeight){

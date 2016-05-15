@@ -35,6 +35,7 @@ mistApp.factory('Authentication',['$rootScope','$location','$window','$cookies',
 					 	if($cookies.get('mistTrack'))
 					 	{
 					 		isAuthenticated = true;
+					 		console.log(JSON.stringify(res.data));
 					 		$window.sessionStorage.setItem("currentUserObj",JSON.stringify(res.data));
 					 		$rootScope.currentUserObj = res.data;
 						 	$rootScope.$broadcast('userAuth',res.data);

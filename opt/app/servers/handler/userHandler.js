@@ -13,27 +13,23 @@ UserHandler.prototype.saveUserToDB =  function(userObject,callback,callbackerr){
 	query+= ",SYSDATE(),'"+userObject.email;
 	query+= "','"+userObject.firebaseUid;
 	query+="','"+userObject.pwd+"');";
-	this.dbService.executeQuery(query,callback,callbackerr);
+	return this.dbService.executeQuery(query);
 };
 
-UserHandler.prototype.addUser = function(signUpUser,callback,callbackerr){
+UserHandler.prototype.addUser = function(signUpUser){
 	var userObj = JSON.parse(signUpUser);
-	for(var property in userObj)
-	{
-		console.log(property+ ": "+userObj[""+property]);
-	}
 	userObj.birthDate = '1987,11,13 17,30,22';
 	userObj.pwd = 'FAKE-FAKE';
-	this.saveUserToDB(userObj,callback,callbackerr);
+	return this.saveUserToDB(userObj);
 };
 
-UserHandler.prototype.fetchUser = function(firebaseUid,callback,callbackerr){
+UserHandler.prototype.fetchUser = function(firebaseUid){
 	var query = "select first_name,last_name,birth_date,join_date,email_id,firebase_id ";
 	query+= "from mist01.mistuser where binary firebase_id='";
 	query+= firebaseUid;
 	query+= "' LIMIT 1";
 	console.log("Inside USER HANDLER doing !!!!");
-	this.dbService.executeQueryFetch(query,callback,callbackerr);
+	return this.dbService.executeQueryFetch(query);
 	/*.then(function(resultSet){
 		return resultSet;
 	}).catch(function(err){
@@ -41,7 +37,7 @@ UserHandler.prototype.fetchUser = function(firebaseUid,callback,callbackerr){
 	});*/
 };
 
-UserHandler.prototype.fillFriends = function(req,res,callback,callbackerr){
+UserHandler.prototype.fillFriends = function(req,res){
 	
 	var currentUserObj = JSON.parse(req.query.userData);
 	check(currentUserObj);
@@ -49,10 +45,7 @@ UserHandler.prototype.fillFriends = function(req,res,callback,callbackerr){
 	query+="inner join mist01.mistgroup AS b ON a.mistid_group=b.mistid_group where a.firebase_id<>'";
 	query += currentUserObj.firebaseId+"'";
 	var that = this;
-	var p = new Promise(function(resolve,reject){
-		that.dbService.executeQueryFetch(query,resolve,reject);
-	});
-	p.then(function(resultSet){
+	that.dbService.executeQueryFetch(query,resolve,reject).then(function(resultSet){
 		var friendData = [];
 		resultSet.forEach(function(userRow){
 			var userObj = {};
@@ -65,9 +58,8 @@ UserHandler.prototype.fillFriends = function(req,res,callback,callbackerr){
 		});
 		res.json(friendData);
 		console.sent("SENT USER DATA");
-		callback();
 	}).catch(function(){
-		callbackerr();
+		
 	});
 
 };
