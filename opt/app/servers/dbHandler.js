@@ -3,7 +3,7 @@ var DBHandler = function(mySql) {
 	this.pool = mySql.createPool({connectionLimit: 2,
 		host: 'localhost',
 		user: 'root',
-		password: 'rahman',
+		password: 'test87',
 		database: 'MySQL',
 		debug: false});
 }
