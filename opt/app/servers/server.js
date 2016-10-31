@@ -13,7 +13,7 @@ var app = express();
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
-app.use(session({secret: 'Z4f5Gdlo985fg9okSRYTH3ef@^5',resave: false,saveUninitialized: true}));
+//app.use(session({secret: 'Z4f5Gdlo985fg9okSRYTH3ef@^5',resave: false,saveUninitialized: true}));
 
 var server = app.listen(8080,function(){
 	console.log("*****SRIKANTH SRIKANTH***** listening on 8080");

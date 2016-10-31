@@ -17,4 +17,8 @@ function($scope,$cookies,$http,$rootScope,Authentication,$window,$location){
 	}).catch(function(err){
 		console.log("ERROR TRYING TO FILL FRIENDS LIST");
 	});
+
+	$scope.uploadFile =function() {
+		document.getElementById('profImgUpload').click();
+	}
 }]);

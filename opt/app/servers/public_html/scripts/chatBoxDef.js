@@ -11,6 +11,7 @@ var ChatBox = function(participantA,participantB,chatId) {
 	this.userIndex = 0;
 	this.initializeChat = function(currentUser)
 	{
+		console.log("THIS .CHAT ID : "+this.chatId);
 		var element = $("#"+this.chatId).find('#chatMessagesPanel').jScrollPane({autoReinitialise: true,
     	stickToBottom:true,
     	maintainPosition:true,

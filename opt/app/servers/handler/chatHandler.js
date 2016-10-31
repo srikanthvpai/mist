@@ -13,8 +13,11 @@ var ChatHandler = function(server) {
 	this.isAdminConnected = false;
 	this.socketList = {};
 	var that = this;
+	// this.io.sockets.on('connection', function (socket) {
+ //    console.log("222222 SOMEONE TRIED TO CONNECT NOW : 2222222 ");
+	// }); 
 	this.defaultNsp.on("connection",function(socket){
-
+	//console.log("SOMEONE TRIED TO CONNECT NOW : ");
 	socket.on("initialize",function(userDataString){ that.initialize(userDataString,socket);});
 
 	socket.on("message",function(msgStringObj){ that.sendMessage(msgStringObj,socket); });
@@ -78,9 +81,10 @@ ChatHandler.prototype.sendMessage = function(msgStringObj,socket)
 		var p = new Promise(function(resolve,reject) {
 			convId = that.processMessage(msgStringObj,resolve,reject);
 		});
-
+		//that.defaultNsp.in(convId).emit("message",msgStringObj);
 		p.then(function(resultSet){
-				that.defaultNsp.in(convId).emit("message",msgStringObj);
+				console.log("SENDING MESSAGE !!!"+msgStringObj);
+				//that.defaultNsp.in(convId).emit("message",msgStringObj);
 		}).catch(function(err){
 			console.log("INSIDE CHAT HANDLER"+err);
 		});

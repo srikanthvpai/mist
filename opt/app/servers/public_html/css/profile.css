@@ -38,7 +38,8 @@
 
 .imgUploadIcon {
   font-size: 2em;
-  color: white; }
+  color: white;
+  cursor: pointer; }
 
 .imgUploadIconTxt {
   font-size: 1em;

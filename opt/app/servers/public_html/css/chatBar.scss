@@ -1,6 +1,6 @@
 $chatIndicatorHeight: 80px;
 $chatIndicatorWidth: 90px;
-$chatIndicatorBorder: 0px;
+$chatIndicatorBorder: 1px;
 $thinkAreaHeight: 80px;
 $thinkAreaWidth: 208px;
 $thinkAreaBorder: 1px;
@@ -46,7 +46,7 @@ $bodyPaddingTop: 170px;
 	border-bottom-right-radius: 0px;
 	border-bottom-left-radius: 5px;
 	border-style:solid;
-	border-color:white; 
+	//border-color:black; 
 	position: fixed;
 	top: $chatLayerHeight+$bodyPaddingTop;
 	right: 0px;
@@ -80,7 +80,7 @@ $bodyPaddingTop: 170px;
 	width: $thinkAreaWidth+ 2*$thinkAreaBorder;
 	border-width: $thinkAreaBorder;
 	border-style: solid;
-	border-color: white;
+	//border-color: white;
 	background-color: white;
 }
 
@@ -111,6 +111,8 @@ $bodyPaddingTop: 170px;
 	width: $thinkAreaWidth+$chatIndicatorWidth+(2*$thinkAreaBorder);
 	height: $chatLayerHeight;
 	border-top-left-radius: 5px;
+	border-style: solid;
+	//border-color: white;
 }
 
 .chatIconCurvy {

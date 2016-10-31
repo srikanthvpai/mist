@@ -8,6 +8,8 @@ var GroupChatHandler = function(io){
 	var that = this;
 	this.defaultNsp.on("connection",function(socket){
 	
+	console.log("SOMEONE TRIED TO CONNECT TO GROUP CHAT NOW : ");
+	socket.join(1);
 	socket.on("initialize",function(roomUserData){ that.initialize(roomUserData,socket);});
 
 	socket.on("message",function(roomMsgObj){ that.sendMessage(roomMsgObj,socket); });
