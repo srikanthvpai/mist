@@ -54,7 +54,8 @@
 </head>
 <body class="mistPageBody" data-ng-app="mistApp">
 
-	<div id="header" data-ng-controller="UserDataController" data-ng-include="header.url"></div>
+<!--	<div id="header" data-ng-controller="UserDataController" data-ng-include="header.url"></div> -->
+	<mistHeader data-ng-if="isAuthenticated()"></mistHeader>
 	<div ng-view></div>
 	<div id="chatBoxes" class="chatBoxes" style="height:0px;"></div>
 	<div id="chatBar" data-ng-controller="ChatBarController" data-ng-include="chatBar.url"></div>
