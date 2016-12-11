@@ -37,7 +37,7 @@ Conversation.prototype.initialize = function(callback,callbackerr){
 
 Conversation.prototype.addMsgObj = function(msgObject,callback,callbackerr) {
 		this.messageList.push(msgObject);
-		this.convService.saveMessage(msgObject,this.id,callback,callbackerr);
+		return this.convService.saveMessage(msgObject,this.id);
 };
 Conversation.prototype.getMsgList = function() {
 		return this.messageList;

@@ -2,7 +2,7 @@ var ConvService = function(dbService){
 	this.dbService = dbService; 
 }
 
-ConvService.prototype.saveMessage = function(msgObj,convId,callback,callbackerr){
+ConvService.prototype.saveMessage = function(msgObj,convId){
 	console.log("Adding msg to db"+msgObj.msgText);
 	var query = "insert into mist01.mistconvmsg(sender,recepient,convid,msgtext) values(";
 /*	query+=msgObj.sender+",";
@@ -12,11 +12,11 @@ ConvService.prototype.saveMessage = function(msgObj,convId,callback,callbackerr)
 	query+=convId+',"';
 	query+=msgObj.msgText;
 	query+='")';
-	this.dbService.executeQueryFetch(query,callback,callbackerr);
+	return this.dbService.executeQueryFetch(query);
 };
 
-ConvService.prototype.executeQueryFetch = function(query,callback,callbackerr){
-	this.dbService.executeQueryFetch(query,callback,callbackerr);	
+ConvService.prototype.executeQueryFetch = function(query){
+	return this.dbService.executeQueryFetch(query);	
 };
 
 module.exports = ConvService;

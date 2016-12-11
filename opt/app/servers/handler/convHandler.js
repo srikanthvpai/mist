@@ -25,8 +25,21 @@ module.exports= function ConvHandler() {
 				return convId;
 			}
 		},
-		addMsg: function(msgObject,callback,callbackerr)
+		addMsg: function(msgObject)
 		{
+			var currentConvId= -1;
+			console.log("INSIDE CONV HANDLER");
+			var conv = this.checkExists(msgObject.sender,msgObject.recepient);
+			if(conv)
+			{
+				return conv.addMsgObj(msgObject).then(function(){
+					return conv.id;
+				});
+			} else {
+				return Promise.reject("Conv doesn't exist");
+			}
+
+			/*
 			var currentConvId= -1;
 			console.log("INSIDE CONV HANDLER");
 			var conv = this.checkExists(msgObject.sender,msgObject.recepient);
@@ -35,6 +48,7 @@ module.exports= function ConvHandler() {
 				conv.addMsgObj(msgObject,callback,callbackerr);
 				return conv.id;
 			}
+			*/
 		},
 		checkExists: function(participantA,participantB)
 		{

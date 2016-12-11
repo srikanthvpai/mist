@@ -20,7 +20,12 @@ var ChatHandler = function(server) {
 	//console.log("SOMEONE TRIED TO CONNECT NOW : ");
 	socket.on("initialize",function(userDataString){ that.initialize(userDataString,socket);});
 
-	socket.on("message",function(msgStringObj){ that.sendMessage(msgStringObj,socket); });
+	socket.on("message",function(msgStringObj){ 
+		that.sendMessage(msgStringObj,socket).then(function(){
+			console.log("Message worked");
+		}); 
+	});
+
 });
 
 }
@@ -77,17 +82,19 @@ ChatHandler.prototype.sendMessage = function(msgStringObj,socket)
 		console.log("Received message , Sending it back "+msgStringObj);
 		var curTime = this.getCurrentTime();
 		var that = this;
-		var convId = -1;
-		var p = new Promise(function(resolve,reject) {
-			convId = that.processMessage(msgStringObj,resolve,reject);
-		});
+		//var convId = -1;
+
+		var p = that.processMessage(msgStringObj);
+
 		//that.defaultNsp.in(convId).emit("message",msgStringObj);
-		p.then(function(resultSet){
+		p.then(function(convId){
 				console.log("SENDING MESSAGE !!!"+msgStringObj);
-				//that.defaultNsp.in(convId).emit("message",msgStringObj);
+				that.defaultNsp.in(convId).emit("message",msgStringObj);
 		}).catch(function(err){
 			console.log("INSIDE CHAT HANDLER"+err);
 		});
+
+		return p;
 
 		//fs.readFile("./chatData/"+socket["sender"]+"_"+socket["recepient"]+".json",'utf8',function(readErr,data){
 		// console.log("Error during reading is "+readErr);
@@ -101,10 +108,10 @@ ChatHandler.prototype.sendMessage = function(msgStringObj,socket)
 		
 };
 
-ChatHandler.prototype.processMessage = function(msgToBeParsed,callback,callbackerr){
+ChatHandler.prototype.processMessage = function(msgToBeParsed){
 	
 	var msgObject = JSON.parse(msgToBeParsed);
-	return this.convHandler.addMsg(msgObject,callback,callbackerr);
+	return this.convHandler.addMsg(msgObject);
 
 };
 
