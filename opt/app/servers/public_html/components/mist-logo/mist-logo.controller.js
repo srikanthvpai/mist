@@ -3,7 +3,7 @@
 
 (function() {
 	function LogoController() {
-
+		console.log("Inside Logo Controller !!!");
 	}
 	LogoController.prototype = {
 

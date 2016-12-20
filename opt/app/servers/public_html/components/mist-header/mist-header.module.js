@@ -4,5 +4,5 @@
 (function () {
     "use strict";
 
-    angular.module("mist-header", ["mist-header-options"]);
+    angular.module("mist-header", ["mist-header-options","mist-logo","mist-login-form"]);
 }());

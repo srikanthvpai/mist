@@ -4,7 +4,7 @@
 (function(){
 	"use strict";
 	function HeaderOptionsController($scope) {
-
+		console.log("Inside Options Controller !!!");
 	}
 	HeaderOptionsController.prototype = {
 

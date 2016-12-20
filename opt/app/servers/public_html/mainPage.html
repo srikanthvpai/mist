@@ -45,6 +45,18 @@
 	<script type="text/javascript" src="components/mist-header/mist-header.controller.js"></script>
 	<script type="text/javascript" src="components/mist-header/mist-header.directive.js"></script>
 
+	<script type="text/javascript" src="components/mist-header-options/mist-header-options.module.js"></script>
+	<script type="text/javascript" src="components/mist-header-options/mist-header-options.controller.js"></script>
+	<script type="text/javascript" src="components/mist-header-options/mist-header-options.directive.js"></script>
+
+	<script type="text/javascript" src="components/mist-login-form/mist-login-form.module.js"></script>
+	<script type="text/javascript" src="components/mist-login-form/mist-login-form.controller.js"></script>
+	<script type="text/javascript" src="components/mist-login-form/mist-login-form.directive.js"></script>
+
+	<script type="text/javascript" src="components/mist-logo/mist-logo.module.js"></script>
+	<script type="text/javascript" src="components/mist-logo/mist-logo.controller.js"></script>
+	<script type="text/javascript" src="components/mist-logo/mist-logo.directive.js"></script>
+
 	
 
 
@@ -61,9 +73,9 @@
 </head>
 <body class="mistPageBody" data-ng-app="mistApp">
 
-<!--	<div id="header" data-ng-controller="UserDataController" data-ng-include="header.url"></div> -->
- <div id="header" data-ng-if="!isAuthenticated()" data-ng-controller="UserDataController" data-ng-include="header.url"></div> 
-	<mist-header data-ng-if="isAuthenticated()"></mist-header> 
+<!--	<div id="header" data-ng-controller="UserDataController" data-ng-include="header.url"></div> 
+ <div id="header" data-ng-if="!isAuthenticated()" data-ng-controller="UserDataController" data-ng-include="header.url"></div> -->
+	<mist-header></mist-header> 
 	<div ng-view></div>
 	<div id="chatBoxes" class="chatBoxes" style="height:0px;"></div>
 	<div id="chatBar" data-ng-controller="ChatBarController" data-ng-include="chatBar.url"></div>
