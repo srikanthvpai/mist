@@ -1,4 +1,4 @@
-/*jslint browser:true es5:true devel:true*/
+	/*jslint browser:true es5:true devel:true*/
 /*global angular*/
 
 (function(){
