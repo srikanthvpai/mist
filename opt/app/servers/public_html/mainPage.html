@@ -41,6 +41,13 @@
 	<script type='text/javascript' src='scripts/questackPage.js'></script>
 	<script type='text/javascript' src='scripts/postackPage.js'></script>
 
+	<script type="text/javascript" src="components/mist-header/mist-header.module.js"></script>
+	<script type="text/javascript" src="components/mist-header/mist-header.controller.js"></script>
+	<script type="text/javascript" src="components/mist-header/mist-header.directive.js"></script>
+
+	
+
+
 	<script type='text/javascript' src="scripts/chatDisplay.js"></script>
 	<script type='text/javascript' src='scripts/chatBoxInit.js'></script>
 	<script type='text/javascript' src='scripts/groupChatDef.js'></script>
@@ -55,7 +62,8 @@
 <body class="mistPageBody" data-ng-app="mistApp">
 
 <!--	<div id="header" data-ng-controller="UserDataController" data-ng-include="header.url"></div> -->
-	<mistHeader data-ng-if="isAuthenticated()"></mistHeader>
+ <div id="header" data-ng-if="!isAuthenticated()" data-ng-controller="UserDataController" data-ng-include="header.url"></div> 
+	<mist-header data-ng-if="isAuthenticated()"></mist-header> 
 	<div ng-view></div>
 	<div id="chatBoxes" class="chatBoxes" style="height:0px;"></div>
 	<div id="chatBar" data-ng-controller="ChatBarController" data-ng-include="chatBar.url"></div>

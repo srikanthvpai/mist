@@ -8,9 +8,9 @@
         return {
             restrict: "EA",
             transclude: true,
-            templateUrl: "./public_html/components/mist-header/mist-header.html",
+            templateUrl: "./components/mist-header/mist-header.html",
             controller: "mistHeaderCtrl",
-            controllerAs: "hoc",
+            controllerAs: "mhc",
             bindToController: { },
             scope: {},
             replace: true
@@ -20,4 +20,5 @@
     angular
         .module("mist-header")
         .directive("mistHeader", HeaderDirective);
+
 }());

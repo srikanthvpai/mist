@@ -4,8 +4,8 @@
 (function () {
     "use strict";
 
-    function HeaderController() {
-        
+    function HeaderController($scope) {
+        console.log("I am in mist header controller !!!");
     }
     
     HeaderController.prototype = {
@@ -13,7 +13,7 @@
     };
 
     HeaderController.$inject = [
-       
+       "$scope"
     ];
 
     angular

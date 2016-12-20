@@ -1,4 +1,4 @@
-var mistApp = angular.module('mistApp',['ngRoute','firebase','ngCookies']).
+var mistApp = angular.module('mistApp',['ngRoute','firebase','ngCookies','mist-header']).
 constant('FIREBASE_URL','https://mist01.firebaseio.com/');
 
 mistApp.config(['$routeProvider', function($routeProvider){
@@ -39,9 +39,10 @@ mistApp.controller('UserDataController',['$scope','$rootScope','$cookies','Authe
 	}
 	$scope.header = Authentication.isAuthenticated() ? {url: "views/mainHeader.html"} : {url: "views/loginHeader.html"};
 	$scope.headerSW = Authentication.isAuthenticated() ? {url: "views/headerSW.html"} : {url: ""};
+	$scope.isAuthenticated = Authentication.isAuthenticated;
 	$scope.$on("userAuth",function(event,args) {
-		$scope.header = {url: "views/mainHeader.html"};
-		$scope.headerSW = {url: "views/headerSW.html"};
+		$scope.header = {url: ""};
+		//$scope.headerSW = {url: "views/headerSW.html"};
 		var currentUserObjNow = JSON.parse($window.sessionStorage.getItem("currentUserObj"));
 		$scope.displayName = currentUserObjNow.firstName+" "+currentUserObjNow.lastName;
 	});
